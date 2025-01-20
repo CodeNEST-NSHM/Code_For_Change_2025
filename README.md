@@ -1,6 +1,7 @@
+
 # Code for Change 2025
 
-Welcome to the Code for Change 2025 website repository. This project is a promotional website for the Code for Change 2025 event, presented by OSSDC and NSHM Knowledge Campus, Durgapur.
+Welcome to the Code for Change 2025 website repository. This project promotes the Code for Change 2025 event, presented by OSSDC and NSHM Knowledge Campus, Durgapur.
 
 ## Table of Contents
 
@@ -10,6 +11,8 @@ Welcome to the Code for Change 2025 website repository. This project is a promot
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 ## Introduction
 
@@ -27,21 +30,29 @@ To get a local copy up and running, follow these steps:
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/CodeNEST-NSHM/Code_For_Change_2025.git 
-   Navigate to the project directory:
+   git clone https://github.com/CodeNEST-NSHM/Code_For_Change_2025.git
+   ```
+2. **Navigate to the project directory**:
+   ```sh
+   cd code-for-change-2025
+   ```
+3. **Install dependencies**:
+   ```sh
+   npm install
+   ```
 
-    2. Navigate to the project directory:
-        cd code-for-change-2025
+## Usage
 
-    3. Install dependencies:
-        npm install
-    Usage
-        To start the development server, run:
-                npm run dev
-    This will start the Vite development server and you can view the website at http://localhost:3000.
+To start the development server, run:
+```sh
+npm run dev
+```
+This will start the Vite development server, and you can view the website at [http://localhost:3000](http://localhost:3000).
 
-Project Structure
-    code-for-change-2025/
+## Project Structure
+
+```
+code-for-change-2025/
 ├── public/
 │   └── index.html
 ├── src/
@@ -59,24 +70,43 @@ Project Structure
 ├── .gitignore
 ├── package.json
 └── README.md
+```
 
-Contributing
+## Contributing
+
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-License
-Distributed under the MIT License. See LICENSE for more information.
+1. **Fork the Project**
+2. **Create your Feature Branch**:
+   ```sh
+   git checkout -b feature/AmazingFeature
+   ```
+3. **Commit your Changes**:
+   ```sh
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. **Push to the Branch**:
+   ```sh
+   git push origin feature/AmazingFeature
+   ```
+5. **Open a Pull Request**
 
-Acknowledgements
-React
-Vite
-Tailwind CSS
-Font Awesome
-Contact
-Your Name - @your_twitter - your_email@example.com
+## License
 
-Project Link: https://github.com/your-username/code-for-change
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Font Awesome](https://fontawesome.com/)
+
+## Contact
+
+For any questions, reach out at: 
+- **Email**: [connectcodenest@gmail.com](mailto:connectcodenest@gmail.com)
+- **GitHub Repository**: [Code For Change 2025](https://github.com/CodeNEST-NSHM/Code_For_Change_2025.git)
+
+---
+
