@@ -1,0 +1,174 @@
+.hero-container {
+  position: relative;
+  height: 100vh;
+  background-color: #111827;
+  overflow: hidden;
+}
+
+.star-field {
+  position: absolute;
+  inset: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 0 1rem;
+  color: white;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  animation: title-glow 3s ease-in-out infinite;
+}
+
+.animated-char {
+  display: inline-block;
+  opacity: 0;
+  animation: char-animation 0.6s ease-out forwards;
+}
+
+.subtitle {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.presented-by {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  animation: slide-up 0.8s ease-out forwards 1.2s;
+}
+
+.organizer {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  animation: slide-up 0.8s ease-out forwards 1.4s;
+}
+
+.date {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  animation: slide-up 0.8s ease-out forwards 1.6s;
+}
+
+.description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  animation: slide-up 0.8s ease-out forwards 1.8s;
+}
+
+.button-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: slide-up 0.8s ease-out forwards 2s;
+}
+
+.button-container button {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.register-btn {
+  background-color: #2563eb;
+}
+
+.register-btn:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.discord-btn {
+  background-color: #7c3aed;
+}
+
+.discord-btn:hover {
+  background-color: #6d28d9;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-200vw) translateY(200vh);
+  }
+}
+
+@keyframes char-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.7);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-25px) scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes title-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .organizer {
+    font-size: 1.5rem;
+  }
+  
+  .button-container {
+    flex-direction: column;
+  }
+  
+  .button-container button {
+    width: 100%;
+  }
+}
