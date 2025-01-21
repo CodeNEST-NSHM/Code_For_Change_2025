@@ -106,5 +106,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 For any questions, reach out at: 
 - **Email**: [connectcodenest@gmail.com](mailto:connectcodenest@gmail.com)
-- **GitHub Repository**: [Code For Change 2025](https://github.com/CodeNEST-NSHM/Code_For_Change_2025.git)..........
+- **GitHub Repository**: [Code For Change 2025](https://github.com/CodeNEST-NSHM/Code_For_Change_2025.git)
 
