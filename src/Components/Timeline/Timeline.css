@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Container */
+.hero-container {
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-wrapper {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Timeline Vertical Line */
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50px; /* Start the line slightly lower */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: calc(100% - 100px); /* Shorter line */
+  background-color: #ddd;
+}
+
+/* Timeline Sections */
+.timeline-section {
+  display: flex;
+  align-items: center;
+  margin: 40px 0; /* Adjusted spacing */
+  position: relative;
+}
+
+.timeline-section:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-section:nth-child(odd) .content-box {
+  margin-right: 20px;
+}
+
+.timeline-section:nth-child(even) .content-box {
+  margin-left: 20px;
+}
+
+/* Leaf Node */
+.leaf-node {
+  width: 20px;
+  height: 20px;
+  background-color: #3498db;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Box */
+.content-box {
+  width: 250px;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.content-box h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.content-box p {
+  font-size: 14px;
+  color: #666;
+}
+
+.content-box .date {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .timeline-wrapper::before {
+    left: 20px;
+  }
+
+  .timeline-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-section:nth-child(odd) .content-box,
+  .timeline-section:nth-child(even) .content-box {
+    margin: 0 0 20px 40px;
+  }
+
+  .leaf-node {
+    left: 20px;
+    transform: translateX(0);
+  }
+
+  .content-box {
+    width: 100%;
+  }
+}
