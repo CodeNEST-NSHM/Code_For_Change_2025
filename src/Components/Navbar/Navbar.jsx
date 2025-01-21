@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleDarkMode = () => {
@@ -23,13 +23,13 @@ const Navbar = () => {
                 </div>
 
                 <div className="hamburger" onClick={toggleMenu}>
-                    <span></span>
+                    <span ></span>
                     <span></span>
                     <span></span>
                 </div>
 
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                <a href="/code-of-conduct">Orgabizer</a>
+                <a href="/code-of-conduct">Organizer</a>
                     <a href="/code-of-conduct">Code of Conduct</a>
                     <button 
                         className="theme-toggle"
