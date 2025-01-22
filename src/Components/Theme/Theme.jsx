@@ -58,6 +58,36 @@ const HackathonTheme = () => {
           <p><strong>AI-driven waste management:</strong> Utilizing AI and technology for efficient waste collection, sorting, and recycling.</p>
         </div>
       </div>
+      <div className="problem-statement">
+        <h2>Disability Support</h2>
+        <div className="problem-list">
+          <p><strong/>Limited access to assistive tech, public space accessibility</p>
+        </div>
+        <h3>Potential Solutions</h3>
+        <div className="solution-list">
+          <p><strong/>Affordable assistive devices, accessibility infrastructure updates</p>
+        </div>
+      </div>
+      <div className="problem-statement">
+        <h2>Public Services</h2>
+        <div className="problem-list">
+          <p><strong/>Digital access barriers, railway system optimization</p>
+        </div>
+        <h3>Potential Solutions</h3>
+        <div className="solution-list">
+          <p><strong/>User-friendly digital services, AI-driven transport solutions</p>
+        </div>
+      </div>
+      <div className="problem-statement">
+        <h2>Community Empowerment</h2>
+        <div className="problem-list">
+          <p><strong/>Limited legal service access, economic opportunities</p>
+        </div>
+        <h3>Potential Solutions</h3>
+        <div className="solution-list">
+          <p><strong/>Affordable legal support, sustainable livelihood programs</p>
+        </div>
+      </div>
     </div>
   );
 };
