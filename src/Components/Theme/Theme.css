@@ -1,0 +1,30 @@
+.theme-container {
+    background-color: #111827;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .theme-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #91da1b; /* Accent color */
+  }
+  
+  .problem-statement {
+    background-color: rgba(255, 255, 255, 0.05); /* Light blur */
+    backdrop-filter: blur(5px); /* Add blur effect */
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .problem-list,
+  .solution-list {
+    margin-top: 20px;
+  }
+  
+  .problem-list p,
+  .solution-list p {
+    margin: 10px 0;
+  }
