@@ -505,12 +505,6 @@
   --text-color: #111827;
 }
 
-@media (max-width: 1000px) {
-  .hero-container {
-    /* heigh``t: 100vh; */
-  }
-}
-
 @media (max-width: 768px) {
   .content {
     padding: 0 1.5rem;
