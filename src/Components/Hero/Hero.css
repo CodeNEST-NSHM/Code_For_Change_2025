@@ -1,18 +1,21 @@
 .hero-container {
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: var(--bg-color, #111827);
   overflow: hidden;
   transition: background-color 0.3s ease;
-  padding-top: var(--navbar-height, 10px);
+  padding-top: var(--navbar-height, 15px);
 }
 
 /* Background Grid */
 .background-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: 1;
   opacity: 0.5;
@@ -62,6 +65,7 @@
   inset: 0;
   will-change: transform;
   z-index: 2;
+
 }
 
 .star {
@@ -388,24 +392,24 @@
 }
 
 .social-icon.twitter {
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
 }
 .social-icon.twitter:hover {
-  background-color: #1A91DA;
+  background-color: #1a91da;
 }
 
 .social-icon.linkedin {
-  background-color: #0077B5;
+  background-color: #0077b5;
 }
 .social-icon.linkedin:hover {
   background-color: #005582;
 }
 
 .social-icon.instagram {
-  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
 }
 .social-icon.instagram:hover {
-  background: linear-gradient(45deg, #FF8A00, #E1306C, #C13584);
+  background: linear-gradient(45deg, #ff8a00, #e1306c, #c13584);
 }
 
 /* Screen Reader Only Text */
@@ -445,12 +449,13 @@
 }
 
 @keyframes title-glow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   }
   50% {
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
-                 0 0 50px rgba(37, 99, 235, 0.3);
+      0 0 50px rgba(37, 99, 235, 0.3);
   }
 }
 
@@ -467,7 +472,8 @@
 
 /* Animations */
 @keyframes grid-fade {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
   }
   50% {
@@ -493,24 +499,29 @@
   }
 }
 
-
 /* Dark mode support */
 [data-theme="light"] .hero-container {
   --bg-color: #f3f4f6;
   --text-color: #111827;
 }
 
+@media (max-width: 1000px) {
+  .hero-container {
+    /* heigh``t: 100vh; */
+  }
+}
+
 @media (max-width: 768px) {
   .content {
     padding: 0 1.5rem;
   }
-  
+
   .button-container {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
   }
-  
+
   .button-container button {
     width: 100%;
     justify-content: center;
