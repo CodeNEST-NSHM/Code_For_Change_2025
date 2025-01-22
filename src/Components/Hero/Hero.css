@@ -4,7 +4,7 @@
   background-color: var(--bg-color, #111827);
   overflow: hidden;
   transition: background-color 0.3s ease;
-  padding-top: var(--navbar-height, 40px);
+  padding-top: var(--navbar-height, 10px);
 }
 
 /* Background Grid */
@@ -284,6 +284,7 @@
   display: flex;
   gap: 1.5rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   opacity: 0;
   animation: slide-up 0.8s ease-out forwards 2s;
 }
@@ -522,7 +523,7 @@
   }
 
   .countdown-container {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 1rem;
   }
 

@@ -21,7 +21,7 @@ body {
   position: relative;
   max-width: 800px;
   width: 100%;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 /* Timeline Vertical Line */

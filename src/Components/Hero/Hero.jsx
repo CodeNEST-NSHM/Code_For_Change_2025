@@ -240,10 +240,10 @@ const HeroSection = () => {
             <Clock size={20} />
             <span>24 Hours Hackathon</span>
           </div>
-          <div className="detail-item">
+          {/* <div className="detail-item">
             <Users size={20} />
             <span>500+ Participants Expected</span>
-          </div>
+          </div> */}
         </div>
 
         <CountdownTimer />
@@ -269,7 +269,7 @@ const HeroSection = () => {
             {copied ? 'Copied!' : 'Share Event'}
           </button>
         </div>
-        <SocialLinks />
+        {/* <SocialLinks /> */}
       </div>
       <RegistrationModal 
         isOpen={isModalOpen} 
