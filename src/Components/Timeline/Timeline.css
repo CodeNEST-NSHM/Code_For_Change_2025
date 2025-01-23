@@ -14,7 +14,8 @@ body {
 /* Container */
 .hero-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .timeline-wrapper {
@@ -97,6 +98,33 @@ body {
   margin-bottom: 10px;
 }
 
+/* Timeline Title Styling */
+.timeline-title {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #91da1b;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cool Underline Effect */
+.timeline-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background-color: #91da1b;
+  transition: width 0.5s ease;
+}
+
+.timeline-title:hover::after {
+  width: 100%;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .timeline-wrapper::before {
@@ -120,5 +148,10 @@ body {
 
   .content-box {
     width: 100%;
+  }
+
+  .timeline-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
   }
 }

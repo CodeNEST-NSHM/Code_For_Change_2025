@@ -4,6 +4,7 @@ import './Timeline.css';
 const TimelineTree = () => {
   return (
     <div className="hero-container">
+      <h2 className="timeline-title">Hackathon Timeline</h2> {/* Added Timeline Heading */}
       <div className="timeline-wrapper">
         <div className="curved-timeline">
           {[

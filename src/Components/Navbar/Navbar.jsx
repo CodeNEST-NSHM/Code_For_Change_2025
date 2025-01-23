@@ -19,7 +19,7 @@ const Navbar = () => {
         <nav className={`navbar ${isDarkMode ? 'dark' : 'light'}`}>
             <div className="nav-content">
                 <div className="nav-logo">
-                    <a href="/">OSSDC X NSHMKC DURGAPUR</a>
+                    <a href="#">OSSDC X NSHMKC DURGAPUR</a>
                 </div>
 
                 <div className="hamburger" onClick={toggleMenu}>

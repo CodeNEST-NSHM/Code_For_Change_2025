@@ -1,30 +1,157 @@
+/* Importing a clean, professional Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .theme-container {
-    background-color: #111827;
-    color: #fff;
-    padding: 50px;
-    text-align: center;
+  background-color: #111827; /* Professional dark background */
+  color: #ffffff;
+  padding: 50px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+/* Title Styling */
+.theme-title {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #91da1b;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cool Underline Effect */
+.theme-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background-color: #91da1b;
+  transition: width 0.5s ease;
+}
+
+.theme-title:hover::after {
+  width: 100%;
+}
+
+/* Problem Statement Card Styling */
+.problem-statement {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 40px;
+  border-radius: 12px;
+  margin: 0 auto 40px auto; /* Center the box */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 60%; /* Make the box narrower */
+  text-align: center; /* Center text inside the box */
+}
+
+.problem-statement:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading Styling */
+.problem-statement h2,
+.problem-statement h3 {
+  color: #ffd700;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+/* Underline Hover Effect */
+.problem-statement h2::after,
+.problem-statement h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.problem-statement h2:hover::after,
+.problem-statement h3:hover::after {
+  width: 100%;
+}
+
+/* List Styling */
+.problem-list,
+.solution-list {
+  margin-top: 30px;
+  /* text-align: left; */ /* Remove to center the text */
+}
+
+.problem-list p,
+.solution-list p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  /* padding-left: 30px; */ /* Remove left padding */
+  transition: color 0.3s ease;
+}
+
+/* Remove Icons Before List Items */
+/* .problem-list p::before,
+.solution-list p::before {
+  content: '\f0da';  Remove tick mark icon
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #91da1b;
+  font-size: 1rem;
+} */
+
+/* List Item Hover Effect */
+.problem-list p:hover,
+.solution-list p:hover {
+  color: #00ff7f;
+}
+
+/* Smooth Transitions */
+.theme-title,
+.problem-statement h2,
+.problem-statement h3,
+.problem-list p,
+.solution-list p {
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .theme-container {
+    padding: 20px;
   }
-  
+
   .theme-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #91da1b; /* Accent color */
   }
-  
+
   .problem-statement {
-    background-color: rgba(255, 255, 255, 0.05); /* Light blur */
-    backdrop-filter: blur(5px); /* Add blur effect */
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    padding: 20px;
+    width: 90%; /* Adjust width for smaller screens */
   }
-  
-  .problem-list,
-  .solution-list {
-    margin-top: 20px;
-  }
-  
+
   .problem-list p,
   .solution-list p {
-    margin: 10px 0;
+    font-size: 1rem;
   }
+}
