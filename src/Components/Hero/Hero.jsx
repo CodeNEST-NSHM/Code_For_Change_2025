@@ -114,7 +114,7 @@ const SocialLinks = () => (
 const HeroSection = () => {
   const [stars, setStars] = useState([]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -147,6 +147,14 @@ const HeroSection = () => {
     };
 
     generateStars();
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBanner(true);
+    }, 4000);
+
+    return () => clearTimeout(timer); // Cleanup the timeout on component unmount
   }, []);
 
   // Handle share button click

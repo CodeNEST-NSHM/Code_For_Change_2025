@@ -74,7 +74,7 @@ const Footer = () => {
         transition={{ duration: 0.5 }}
       >
         <p>Built with ❤️ by Team CodeNEST</p>
-        <a href="https://www.codenest.com" className="footer-link">CodeNEST</a>
+        <a href="https://codenestnshm.netlify.app/" className="footer-link">CodeNEST</a>
       </motion.div>
     </motion.div>
   );
