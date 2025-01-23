@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import Timeline from "./Components/Timeline/Timeline";
 import Theme from "./Components/Theme/Theme";
+import Prize from "./Components/Prizes/Prize";
 import "./App.css";
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Hero />
       <Timeline />
       <Theme />
+      <Prize/>
     </div>
   );
 };
