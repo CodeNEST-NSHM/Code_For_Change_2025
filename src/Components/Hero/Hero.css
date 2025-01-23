@@ -570,6 +570,16 @@
   }
 }
 
+@media (max-width: 371px) {
+  .event-details {
+    width: 90%;
+  }
+
+  p.subtitle.organizer {
+    width: 90%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .star,
   .animated-char,
