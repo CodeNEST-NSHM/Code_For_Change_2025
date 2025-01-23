@@ -5,6 +5,9 @@ import instagrm from '../../assets/images/instagram.svg';
 import github from '../../assets/images/github.svg';
 import twitter from '../../assets/images/twitter.svg';
 import linkedin from '../../assets/images/linkedin.svg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './Hero.css';
 
 const CountdownTimer = () => {
@@ -149,12 +152,31 @@ const HeroSection = () => {
   // Handle share button click
   const handleShare = async () => {
     const eventUrl = window.location.href;
-    try {
-      await navigator.clipboard.writeText(eventUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy:', err);
+    const shareData = {
+      title: "Check out this event!",
+      text: "Take a look at this exciting event happening soon!",
+      url: eventUrl,
+    };
+  
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData); // Opens the share dialog
+        toast.success("Event copied successfully!");
+      } catch (err) {
+        console.error("Error sharing:", err);
+        toast.error("Failed to share the event.");
+      }
+    } else {
+      // Fallback to clipboard copy if Web Share API is not supported
+      try {
+        await navigator.clipboard.writeText(eventUrl);
+        toast.info("Event link copied to clipboard!");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+        toast.error("Failed to copy the event link.");
+      }
     }
   };
 
@@ -178,6 +200,18 @@ const HeroSection = () => {
 
   return (
     <div className="hero-container" onClick={createShootingStar}>
+      <ToastContainer 
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored" 
+      />
       <div className="background-grid"></div>
       <div 
         className="star-field"
