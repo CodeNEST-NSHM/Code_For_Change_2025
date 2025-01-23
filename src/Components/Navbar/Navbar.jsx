@@ -34,12 +34,12 @@ const Navbar = () => {
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <a href="/code-of-conduct">Organizer</a>
                     <a href="/code-of-conduct">Code of Conduct</a>
-                    <button 
+                    {/* <button 
                         className="theme-toggle"
                         onClick={toggleDarkMode}
                     >
                         {isDarkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </nav>

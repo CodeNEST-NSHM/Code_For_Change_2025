@@ -1,0 +1,80 @@
+.footer-container {
+    background-color: #111827; /* Dark background for the footer */
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .footer-section {
+    flex: 1 1 220px; /* Ensure each section has a base size and flexes as needed */
+    min-width: 220px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #60a5fa; /* Light blue color for headings */
+    font-weight: 600;
+  }
+  
+  .footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .footer-bottom p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-section {
+      min-width: 100%;
+      text-align: center;
+    }
+  }
+  
