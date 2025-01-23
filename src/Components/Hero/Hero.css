@@ -510,6 +510,10 @@
     padding: 0 1.5rem;
   }
 
+  .hero-container {
+    padding-top: var(--navbar-height, 30px);
+  }
+
   .button-container {
     flex-direction: column;
     width: 100%;
@@ -533,6 +537,7 @@
 
   .countdown-container {
     /* flex-direction: column; */
+    width: 90%;
     gap: 1rem;
   }
 
