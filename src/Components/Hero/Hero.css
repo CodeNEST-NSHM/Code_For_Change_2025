@@ -521,6 +521,10 @@
     justify-content: center;
   }
 
+  .announcement-banner {
+    top: var(--navbar-height, 128px);
+  }
+
   .announcement-content {
     flex-direction: column;
     text-align: center;
