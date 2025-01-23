@@ -537,7 +537,6 @@
 
   .countdown-container {
     /* flex-direction: column; */
-    width: 90%;
     gap: 1rem;
   }
 
@@ -562,6 +561,12 @@
 @media (min-width: 769px) {
   .button-container button:hover {
     transform: scale(1.05) translateY(-2px);
+  }
+}
+
+@media (max-width: 415px) {
+  .countdown-container {
+    width: 90%;
   }
 }
 
