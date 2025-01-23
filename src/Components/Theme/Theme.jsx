@@ -1,94 +1,143 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './Theme.css';
 
-const HackathonTheme = () => {
+const ProblemCard = ({ title, problems, solutions }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <div className="theme-container">
-      <h1 className="theme-title">Hackathon Theme</h1>
+    <motion.div 
+      className="problem-card"
+      whileHover={{ scale: 1.03 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      onClick={() => setIsExpanded(!isExpanded)}
+      whileTap={{ scale: 0.95 }}
+    >
+      <motion.div 
+        className="problem-header"
+      >
+        <h2>{title}</h2>
+      </motion.div>
+      
+      <motion.div 
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ 
+          opacity: isExpanded ? 1 : 0, 
+          height: isExpanded ? 'auto' : 0 
+        }}
+        transition={{ duration: 0.3 }}
+        className="problem-content"
+      >
+        <div className="problem-list">
+          <h3>Challenges</h3>
+          {problems.map((problem, index) => (
+            <motion.p 
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <strong>{problem}</strong>
+            </motion.p>
+          ))}
+        </div>
+        
+        <div className="solution-list">
+          <h3>Potential Solutions</h3>
+          {solutions.map((solution, index) => (
+            <motion.p 
+              key={index}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <strong>{solution}</strong>
+            </motion.p>
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
-      <div className="problem-statement">
-        <h2>Healthcare Workers</h2>
-        <div className="problem-list">
-          <p><strong>Language Barriers:</strong> Communication challenges between healthcare providers and patients from diverse linguistic backgrounds.</p>
-          <p><strong>Cultural Differences:</strong> Misunderstandings and ineffective care due to differing cultural values and beliefs.</p>
-          <p><strong>Burnout:</strong> High stress levels and emotional exhaustion among healthcare professionals.</p>
-          <p><strong>Mental Health:</strong> Limited access to mental health support for healthcare workers.</p>
-        </div>
-        <h3>Potential Solutions</h3>
-        <div className="solution-list">
-          <p><strong>Communication Tools:</strong> Language translation services, multilingual staff, culturally sensitive communication materials.</p>
-          <p><strong>Cultural Training:</strong> Education and training programs to increase cultural awareness and sensitivity.</p>
-          <p><strong>Mental Health Support Systems:</strong> Access to counseling, therapy, and support groups for healthcare workers.</p>
-        </div>
-      </div>
+const HackathonTheme = () => {
+  const themeData = [
+    {
+      title: "Healthcare Workers",
+      problems: [
+        "Language Barriers",
+        "Cultural Differences",
+        "Burnout",
+        "Mental Health Challenges"
+      ],
+      solutions: [
+        "Communication Tools",
+        "Cultural Training",
+        "Mental Health Support Systems"
+      ]
+    },
+    {
+      title: "Natural Disasters",
+      problems: [
+        "Data Deficiencies",
+        "Fragmented Coordination"
+      ],
+      solutions: [
+        "Improved Data Collection Systems",
+        "Unified Response Frameworks"
+      ]
+    },
+    {
+      title: "Environmental Conservation",
+      problems: [
+        "Unsustainable Resource Consumption",
+        "E-waste Management"
+      ],
+      solutions: [
+        "Sustainable Consumption Practices",
+        "AI-driven Waste Management"
+      ]
+    },
+    {
+      title: "Education",
+      problems: [
+        "Accessibility for Disabled Students",
+        "Educational Inequalities"
+      ],
+      solutions: [
+        "Inclusive Learning Technologies",
+        "Personalized Educational Support"
+      ]
+    }
+  ];
 
-      <div className="problem-statement">
-        <h2>Natural Disasters</h2>
-        <div className="problem-list">
-          <p><strong>Data Deficiencies:</strong> Lack of real-time data on the impact of disasters and the needs of affected populations.</p>
-          <p><strong>Fragmented Coordination:</strong> Inefficient communication and coordination between different agencies and organizations involved in disaster response.</p>
-        </div>
-        <h3>Potential Solutions</h3>
-        <div className="solution-list">
-          <p><strong>Improved Data Collection Systems:</strong> Real-time data collection and analysis tools for disaster response.</p>
-          <p><strong>Unified Response Frameworks:</strong> Standardized protocols and communication channels for coordinated disaster response.</p>
-        </div>
+  return (
+    <motion.div 
+      className="hackathon-theme-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.h1 
+        className="theme-title"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      >
+        Hackathon Challenge Areas
+      </motion.h1>
+      
+      <div className="problem-grid">
+        {themeData.map((theme, index) => (
+          <ProblemCard 
+            key={index}
+            title={theme.title}
+            problems={theme.problems}
+            solutions={theme.solutions}
+          />
+        ))}
       </div>
-
-      <div className="problem-statement">
-        <h2>Environmental Conservation</h2>
-        <div className="problem-list">
-          <p><strong>Unsustainable resource consumption:</strong> Overuse of natural resources leading to depletion and environmental degradation.</p>
-          <p><strong>E-waste management:</strong> The growing challenge of electronic waste disposal and its environmental impact.</p>
-        </div>
-        <h3>Potential Solutions</h3>
-        <div className="solution-list">
-          <p><strong>Sustainable consumption practices:</strong> Promoting responsible consumption habits, reducing waste, and adopting eco-friendly alternatives.</p>
-          <p><strong>AI-driven waste management:</strong> Utilizing AI and technology for efficient waste collection, sorting, and recycling.</p>
-        </div>
-      </div>
-      <div className="problem-statement">
-        <h2>Education</h2>
-        <div className="problem-list">
-          <p><strong/>Accessibility for disabled students, educational inequalities</p>
-        </div>
-        <h3>Potential Solutions</h3>
-        <div className="solution-list">
-          <p><strong>Sustainable consumption practices:</strong> Promoting responsible consumption habits, reducing waste, and adopting eco-friendly alternatives.</p>
-          <p><strong>AI-driven waste management:</strong> Utilizing AI and technology for efficient waste collection, sorting, and recycling.</p>
-        </div>
-      </div>
-      <div className="problem-statement">
-        <h2>Disability Support</h2>
-        <div className="problem-list">
-          <p><strong/>Limited access to assistive tech, public space accessibility</p>
-        </div>
-        <h3>Potential Solutions</h3>
-        <div className="solution-list">
-          <p><strong/>Affordable assistive devices, accessibility infrastructure updates</p>
-        </div>
-      </div>
-      <div className="problem-statement">
-        <h2>Public Services</h2>
-        <div className="problem-list">
-          <p><strong/>Digital access barriers, railway system optimization</p>
-        </div>
-        <h3>Potential Solutions</h3>
-        <div className="solution-list">
-          <p><strong/>User-friendly digital services, AI-driven transport solutions</p>
-        </div>
-      </div>
-      <div className="problem-statement">
-        <h2>Community Empowerment</h2>
-        <div className="problem-list">
-          <p><strong/>Limited legal service access, economic opportunities</p>
-        </div>
-        <h3>Potential Solutions</h3>
-        <div className="solution-list">
-          <p><strong/>Affordable legal support, sustainable livelihood programs</p>
-        </div>
-      </div>
-    </div>
+    </motion.div>
   );
 };
 
