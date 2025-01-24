@@ -22,18 +22,17 @@ body {
   position: relative;
   max-width: 800px;
   width: 100%;
-  /* padding: 20px 0; */
 }
 
 /* Timeline Vertical Line */
 .timeline-wrapper::before {
   content: "";
   position: absolute;
-  top: 50px; /* Start the line slightly lower */
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
-  height: calc(100% - 100px); /* Shorter line */
+  height: calc(100% - 100px);
   background-color: #ddd;
 }
 
@@ -41,8 +40,16 @@ body {
 .timeline-section {
   display: flex;
   align-items: center;
-  margin: 40px 0; /* Adjusted spacing */
+  margin: 40px 0;
   position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+
+.timeline-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .timeline-section:nth-child(odd) {

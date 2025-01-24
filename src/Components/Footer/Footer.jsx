@@ -1,82 +1,66 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import instagram from '../../assets/images/instagram.svg';
-import facebook from '../../assets/images/facebook.png';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <motion.div 
-      className="footer-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
+    <footer className="footer-container">
       <div className="footer-content">
-        <motion.div 
-          className="footer-section"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-        >
-          <h3>Code of Conduct</h3>
-          <p>Our code of conduct ensures a safe, inclusive environment for all participants. Please follow the guidelines to ensure a positive experience for everyone.</p>
-        </motion.div>
+        <div className="footer-section">
+          <h3>About Us</h3>
+          <p>
+            We are a community of tech enthusiasts at NSHM Durgapur, striving to
+            create impactful tech solutions.
+          </p>
+        </div>
 
-        <motion.div 
-          className="footer-section"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-        >
-          <h3>Follow NSHM</h3>
+        <div className="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: contact@nshmkcdgp.com</p>
+          <p>Phone: +91-12345-67890</p>
+        </div>
+
+        <div className="footer-section">
+          <h3>Follow CodeNEST, NSHM, OSSDC</h3>
           <div className="social-links">
-            <a href="https://www.instagram.com/nshmuniversity/" target="_blank" rel="noopener noreferrer">
-              <motion.img 
-                src={instagram} 
-                alt="Instagram" 
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img
+                src="facebook-icon.png"
+                alt="Facebook"
                 className="social-icon"
-                whileHover={{ scale: 1.1 }}
               />
             </a>
-            <a href="https://www.facebook.com/nshm.university" target="_blank" rel="noopener noreferrer">
-              <motion.img 
-                src={facebook} 
-                alt="Facebook" 
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img
+                src="twitter-icon.png"
+                alt="Twitter"
                 className="social-icon"
-                whileHover={{ scale: 1.1 }}
+              />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img
+                src="instagram-icon.png"
+                alt="Instagram"
+                className="social-icon"
               />
             </a>
           </div>
-        </motion.div>
-
-        <motion.div 
-          className="footer-section"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-        >
-          <h3>Meet Organizer</h3>
-          <p>Get to know the talented organizers behind CodeNEST!</p>
-        </motion.div>
-
-        <motion.div 
-          className="footer-section"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-        >
-          <h3>Contact Us</h3>
-          <p>Email us at <a href="mailto:connectcodenest@gmail.com">connectcodenest@gmail.com</a></p>
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div 
-        className="footer-bottom"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p>Built with ❤️ by Team CodeNEST</p>
-        <a href="https://codenestnshm.netlify.app/" className="footer-link">CodeNEST</a>
-      </motion.div>
-    </motion.div>
+      <div className="footer-bottom">
+        <p>
+          Built with ❤️ by{" "}
+          <a
+            href="https://codenestnshm.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            CodeNEST Open Source Development Club of NSHM Knowledge Campus, Durgapur
+          </a>
+        </p>
+      </div>
+    </footer>
   );
 };
 

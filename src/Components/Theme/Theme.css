@@ -1,116 +1,118 @@
 .hackathon-theme-container {
   width: 100%;
-  background-color: #0f172a;
+  background-color: #111827;
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Horizontally center the content */
-  justify-content: center; /* Vertically center the content */
-  min-height: 95vh; /* Ensure it takes full viewport height */
-  padding: 5px 5rem; /* Adjust padding on the sides for responsiveness */
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
+  padding: 2rem;
   box-sizing: border-box;
-  text-align: center; /* Center text inside the container */
 }
 
-/* Grid for problem cards */
+.theme-title {
+  font-size: 2.5rem;
+  color: #60a5fa;
+  margin-bottom: 3rem;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
 .problem-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 2rem; /* Increased gap between the cards */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   width: 100%;
-  max-width: 800px; /* Restricts maximum width for better alignment */
-  margin: 0 auto; /* Center the grid horizontally */
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
-/* Individual problem cards */
 .problem-card {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 15px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   transition: all 0.3s ease;
-  min-height: 250px; /* Increased the minimum height for the cards */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Space between elements inside the card */
-  cursor: pointer; /* Indicate the card is clickable */
-  animation: pulse 2s infinite; /* Pulse animation */
+  cursor: pointer;
+  position: relative;
+  min-height: 150px; /* Added to create space */
 }
 
-/* Pulsing animation to indicate click */
+.tap-to-reveal {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #60a5fa;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  animation: pulse 1.5s infinite;
+  margin-top: 2px; /* Added gap */
+}
+
+
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
 }
 
-/* Problem card header */
+.problem-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(96, 165, 250, 0.2);
+}
+
 .problem-header {
-  padding: 1.5rem; /* Increased padding for more space */
+  padding: 1.5rem;
   background: rgba(37, 99, 235, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Header styling inside cards */
 .problem-header h2 {
   margin: 0;
   color: #60a5fa;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
-/* Content styling inside problem cards */
 .problem-content {
-  padding: 1.5rem; /* Increased padding for more space */
-  flex-grow: 1; /* Allow content to grow and take up space */
-  overflow: hidden;
-  opacity: 0; /* Initially hide the content */
-  transition: opacity 0.3s ease; /* Smooth transition for content visibility */
-}
-
-/* When the card is clicked, show the content */
-.problem-card.clicked .problem-content {
-  opacity: 1;
-}
-
-/* Gap between text items in problem and solution lists */
-.problem-list,
-.solution-list {
   display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Increased gap between each paragraph */
-  padding-left: 1rem; /* Added padding to the left of the text */
-  padding-right: 1rem; /* Added padding to the right for symmetry */
-  padding-bottom: 3rem;
+  padding: 1.5rem;
 }
 
-.problem-list h3,
-.solution-list h3 {
-  margin-bottom: 1rem; 
+.problem-section, .solution-section {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.problem-section h3, .solution-section h3 {
   color: #60a5fa;
-  font-size: 1.25rem;
+  border-bottom: 2px solid #60a5fa;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Page-wide body adjustments */
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
+.problem-content p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .problem-grid {
-    grid-template-columns: 1fr; /* Single column layout for smaller screens */
-    gap: 1.5rem; /* Adjusted gap for better spacing on small screens */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  .hackathon-theme-container {
-    padding: 1rem; /* Reduce padding on small devices */
+
+  .theme-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .problem-content {
+    flex-direction: column;
+  }
+
+  .problem-section, .solution-section {
+    padding: 0;
   }
 }

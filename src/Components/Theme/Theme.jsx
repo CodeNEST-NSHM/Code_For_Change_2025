@@ -1,61 +1,66 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Theme.css';
 
 const ProblemCard = ({ title, problems, solutions }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <motion.div 
-      className="problem-card"
-      whileHover={{ scale: 1.03 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      onClick={() => setIsExpanded(!isExpanded)}
+    <motion.div
+      className={`problem-card ${isExpanded ? 'expanded' : ''}`}
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      onClick={() => setIsExpanded(!isExpanded)}
     >
-      <motion.div 
-        className="problem-header"
-      >
+      <div className="problem-header">
         <h2>{title}</h2>
-      </motion.div>
-      
-      <motion.div 
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ 
-          opacity: isExpanded ? 1 : 0, 
-          height: isExpanded ? 'auto' : 0 
-        }}
-        transition={{ duration: 0.3 }}
-        className="problem-content"
-      >
-        <div className="problem-list">
-          <h3>Challenges</h3>
-          {problems.map((problem, index) => (
-            <motion.p 
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <strong>{problem}</strong>
-            </motion.p>
-          ))}
+      </div>
+
+      {!isExpanded && (
+        <div className="tap-to-reveal">
+          <span>Tap to Reveal</span>
         </div>
-        
-        <div className="solution-list">
-          <h3>Potential Solutions</h3>
-          {solutions.map((solution, index) => (
-            <motion.p 
-              key={index}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <strong>{solution}</strong>
-            </motion.p>
-          ))}
-        </div>
-      </motion.div>
+      )}
+
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="problem-content"
+          >
+            <div className="problem-section">
+              <h3>Challenges</h3>
+              {problems.map((problem, index) => (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {problem}
+                </motion.p>
+              ))}
+            </div>
+
+            <div className="solution-section">
+              <h3>Potential Solutions</h3>
+              {solutions.map((solution, index) => (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {solution}
+                </motion.p>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
@@ -112,13 +117,13 @@ const HackathonTheme = () => {
   ];
 
   return (
-    <motion.div 
+    <motion.div
       className="hackathon-theme-container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.h1 
+      <motion.h1
         className="theme-title"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -126,10 +131,10 @@ const HackathonTheme = () => {
       >
         Hackathon Challenge Areas
       </motion.h1>
-      
+
       <div className="problem-grid">
         {themeData.map((theme, index) => (
-          <ProblemCard 
+          <ProblemCard
             key={index}
             title={theme.title}
             problems={theme.problems}

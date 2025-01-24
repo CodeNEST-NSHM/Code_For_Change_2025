@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Timeline.css';
 
 const TimelineTree = () => {
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sectionsRef.current.forEach(section => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="hero-container">
-      <h2 className="timeline-title">Hackathon Timeline</h2> {/* Added Timeline Heading */}
+      <h2 className="timeline-title">Hackathon Timeline</h2>
       <div className="timeline-wrapper">
         <div className="curved-timeline">
           {[
@@ -29,7 +48,11 @@ const TimelineTree = () => {
               description: 'Final event days',
             },
           ].map((item, index) => (
-            <div key={index} className="timeline-section">
+            <div
+              key={index}
+              ref={el => (sectionsRef.current[index] = el)}
+              className="timeline-section"
+            >
               <div className="leaf-node">
                 <div className="leaf-content">
                   <div className="icon"></div>
