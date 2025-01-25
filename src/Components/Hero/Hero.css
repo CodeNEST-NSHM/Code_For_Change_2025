@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Delius+Unicase:wght@400;700&display=swap');
+
+.delius-unicase-regular {
+  font-family: "Delius Unicase", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.delius-unicase-bold {
+  font-family: "Delius Unicase", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.barrio-regular {
+  font-family: "Barrio", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .hero-container {
   position: relative;
   /* min-height: 100vh; */
@@ -239,16 +259,18 @@
 }
 
 .title {
+  font-family: "Barrio", serif;
   font-size: clamp(2rem, 8vw, 4.5rem);
-  font-weight: bold;
+  font-weight: 500px;
   margin-bottom: 1.5rem;
   animation: title-glow 3s ease-in-out infinite;
   line-height: 1.2;
+  color:rgb(70, 248, 0);
 }
 
 .animated-char {
   display: inline-block;
-  opacity: 0;
+  opacity: 10;
   animation: char-animation 0.6s ease-out forwards;
   transform-origin: center;
 }
