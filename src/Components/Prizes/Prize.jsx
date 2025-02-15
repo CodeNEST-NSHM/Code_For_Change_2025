@@ -6,21 +6,21 @@ const HackathonPrizes = () => {
   const prizeData = [
     {
       title: 'Winner',
-      prize: '₹2000 Cash',
+      prize: '₹10,000 Cash',
       swags: 'Exciting Swags Package',
       icon: '🥇',
       rank: 'first'
     },
     {
       title: 'Runner Up',
-      prize: '₹1000 Cash',
+      prize: '₹5000 Cash',
       swags: 'Special Swag Collection',
       icon: '🥈',
       rank: 'second'
     },
     {
       title: 'Second Runner Up',
-      prize: '₹500 Cash',
+      prize: '₹2500 Cash',
       swags: 'Participation Certificate',
       icon: '🥉',
       rank: 'third'
