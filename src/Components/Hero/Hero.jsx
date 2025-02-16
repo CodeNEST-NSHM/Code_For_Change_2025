@@ -7,7 +7,7 @@ const HeroSection = () => {
     <div className="hero-container">
       <div className="content">
         <motion.h1 
-          className="title"
+          className="title shadow-text"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -15,7 +15,7 @@ const HeroSection = () => {
           {"Code for Change 2025".split('      ').map((char, index) => (
             <motion.span 
               key={index} 
-              className="animated-char"
+              className="animated-char shadow-text"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
@@ -25,7 +25,7 @@ const HeroSection = () => {
           ))}
         </motion.h1>
         <motion.p 
-          className="subtitle presented-by"
+          className="subtitle presented-by shadow-subtitle"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
@@ -33,7 +33,7 @@ const HeroSection = () => {
           Presented by
         </motion.p>
         <motion.p 
-          className="subtitle organizer"
+          className="subtitle organizer shadow-subtitle"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}

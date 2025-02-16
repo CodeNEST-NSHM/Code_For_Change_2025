@@ -6,6 +6,7 @@ import Theme from "./Components/Theme/Theme";
 import Prize from "./Components/Prizes/Prize";
 import Sponsorship from "./Components/Sponsorships/Sponsorship";
 import Footer from "./Components/Footer/Footer";
+import Timer from "./Components/Timer/timer";
 import "./App.css";
 
 const App = () => {
@@ -13,11 +14,13 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Hero />
+      <Timer/>
       <Timeline />
       <Theme />
       <Prize/>
       <Sponsorship/>
       <Footer/>
+      
     </div>
   );
 };

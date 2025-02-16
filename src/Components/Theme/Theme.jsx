@@ -1,148 +1,81 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import './Theme.css';
 
 const ProblemCard = ({ title, problems, solutions }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <motion.div
-      className={`problem-card ${isExpanded ? 'expanded' : ''}`}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => setIsExpanded(!isExpanded)}
+    <div 
+      className={`problem-card ${isFlipped ? 'flipped' : ''}`}
+      onClick={() => setIsFlipped(!isFlipped)}
     >
-      <div className="problem-header">
-        <h2>{title}</h2>
-      </div>
-
-      {!isExpanded && (
-        <div className="tap-to-reveal">
-          <span>Tap to Reveal</span>
+      <div className="card-inner">
+        <div className="card-front">
+          <h2>{title}</h2>
         </div>
-      )}
-
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="problem-content"
-          >
-            <div className="problem-section">
-              <h3>Challenges</h3>
+        <div className="card-back">
+          <div className="problem-section">
+            <h3>Challenges</h3>
+            <ul>
               {problems.map((problem, index) => (
-                <motion.p
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {problem}
-                </motion.p>
+                <li key={index}>{problem}</li>
               ))}
-            </div>
-
-            <div className="solution-section">
-              <h3>Potential Solutions</h3>
+            </ul>
+          </div>
+          <div className="solution-section">
+            <h3>Solutions</h3>
+            <ul>
               {solutions.map((solution, index) => (
-                <motion.p
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {solution}
-                </motion.p>
+                <li key={index}>{solution}</li>
               ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
 const HackathonTheme = () => {
-  const themeData = [
+  const cards = [
     {
-      title: "Healthcare Workers",
-      problems: [
-        "Language Barriers",
-        "Cultural Differences",
-        "Burnout",
-        "Mental Health Challenges"
-      ],
-      solutions: [
-        "Communication Tools",
-        "Cultural Training",
-        "Mental Health Support Systems"
-      ]
-    },
-    {
-      title: "Natural Disasters",
-      problems: [
-        "Data Deficiencies",
-        "Fragmented Coordination"
-      ],
-      solutions: [
-        "Improved Data Collection Systems",
-        "Unified Response Frameworks"
-      ]
-    },
-    {
-      title: "Environmental Conservation",
-      problems: [
-        "Unsustainable Resource Consumption",
-        "E-waste Management"
-      ],
-      solutions: [
-        "Sustainable Consumption Practices",
-        "AI-driven Waste Management"
-      ]
+      title: "Healthcare",
+      problems: ["Access to Care", "Data Privacy", "Patient Experience"],
+      solutions: ["Telehealth", "Blockchain", "AI Diagnostics"]
     },
     {
       title: "Education",
-      problems: [
-        "Accessibility for Disabled Students",
-        "Educational Inequalities"
-      ],
-      solutions: [
-        "Inclusive Learning Technologies",
-        "Personalized Educational Support"
-      ]
+      problems: ["Remote Learning", "Digital Divide", "Student Engagement"],
+      solutions: ["Virtual Classrooms", "Free Devices", "Gamification"]
+    },
+    {
+      title: "Environment",
+      problems: ["Climate Change", "Waste Management", "Energy Usage"],
+      solutions: ["Green Tech", "Recycling AI", "Smart Grid"]
+    },
+    {
+      title: "Finance",
+      problems: ["Financial Inclusion", "Security", "User Experience"],
+      solutions: ["Mobile Banking", "Blockchain", "UX Design"]
     }
   ];
 
   return (
-    <motion.div
-      className="hackathon-theme-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <motion.h1
-        className="theme-title"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 200 }}
-      >
-        Hackathon Challenge Areas
-      </motion.h1>
-
-      <div className="problem-grid">
-        {themeData.map((theme, index) => (
-          <ProblemCard
-            key={index}
-            title={theme.title}
-            problems={theme.problems}
-            solutions={theme.solutions}
-          />
-        ))}
+    <div className="hackathon-container">
+      <div className="content-box">
+        <h1>Hackathon Themes</h1>
+        <div className="cards-grid">
+          {cards.map((card, index) => (
+            <ProblemCard
+              key={index}
+              title={card.title}
+              problems={card.problems}
+              solutions={card.solutions}
+            />
+          ))}
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -14,7 +14,7 @@
 
 .hero-container {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--background-color);
   display: flex;
   justify-content: center;
@@ -22,14 +22,13 @@
   text-align: center;
   padding: 1rem;
   overflow: hidden;
-  min-height: 100vh;
 }
-
-.content {
-  max-width: 90%;
+.animated-char{
   color: var(--primary-color);
 }
-
+.content {
+  padding: 2rem 0; /* Add some vertical padding to the content instead */
+}
 .title {
   font-family: "Sigmar One", serif;
   font-size: clamp(2.5rem, 10vw, 7rem);
@@ -37,6 +36,12 @@
   margin-bottom: 1rem;
   line-height: 1.2;
   word-wrap: break-word;
+}
+.shadow-text {
+  text-shadow: 4px 4px 5px grey;
+}
+.shadow-subtitle {
+  text-shadow: 1px 1px 4px rgb(241, 241, 241);
 }
 
 .animated-char {
@@ -52,7 +57,9 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero-container {
-    padding: 2rem;
+    padding: 1rem;
+    min-height: auto; /* Remove the minimum height constraint */
+    height: auto; /* Allow container to adjust to content */
   }
 
   .title {
@@ -72,4 +79,10 @@
   .subtitle {
     font-size: clamp(1rem, 3vw, 1.8rem);
   }
+    .hero-container {
+      padding: 0.5rem;
+}
+.content {
+  padding: 1.5rem 0;
+}
 }
