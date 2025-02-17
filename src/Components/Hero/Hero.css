@@ -52,6 +52,7 @@
   font-family: "Sigmar One", serif;
   font-size: clamp(1.2rem, 4vw, 2.5rem);
   margin-top: 0.5rem;
+  color:#393e41
 }
 
 /* Responsive Adjustments */

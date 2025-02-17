@@ -1,5 +1,6 @@
 .footer-container {
-  background-color: #111827;
+  background-color: 
+  #fefadc;
   color: white;
   padding: 2rem 1rem; /* Reduced padding for the container */
   text-align: center;
@@ -21,7 +22,7 @@
 .footer-section h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem; /* Reduced margin under the heading */
-  color: #60a5fa;
+  color: #f1563f;
   font-weight: 600;
 }
 

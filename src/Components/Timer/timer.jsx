@@ -9,7 +9,7 @@ const Hackathon = () => {
 
         {/* About Box */}
         <div className="about-box">
-        <p>
+          <p>
             <strong>Code for Change</strong> is a <strong>24-hour offline hackathon</strong> by
             <strong> NSHM Knowledge Campus, Durgapur</strong>, in collaboration with the
             <strong> Open Source Student Development Club</strong>. It features two rounds: an online idea submission
@@ -21,7 +21,10 @@ const Hackathon = () => {
         {/* Time & Registration Box */}
         <div className="time-and-registration-box">
           <p className="event-date">📅 25-02-2025 to 05-04-2025</p>
-          <button className="register-btn">Register Now</button>
+          <div className="button-group">
+            <button className="register-btn">Register Now</button>
+            <button className="discord-btn">Join Discord</button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,72 +1,77 @@
 :root {
-    --bg-primary: #111827;
-    --text-primary: #e0e7ff;
-    --accent-blue: #3b82f6;
-    --accent-indigo: #6366f1;
-    --border-color: #1e40af;
-    --blur-opacity: rgba(59, 130, 246, 0.1);
-  }
-  
-  .hackathon-prizes-container {
-    min-height: 100vh;
-    background-color: var(--bg-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    color:#00ff7f
-  }
-  
+  --bg-primary: #fefadc;
+  --text-primary: #f1563f;
+  --accent-blue: #3b82f6;
+  --accent-indigo: #6366f1;
+  --border-color: #1e40af;
+  --blur-opacity: rgba(59, 130, 246, 0.1);
+}
+
+.hackathon-prizes-container {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--text-primary);
+}
+
+.prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.prize-card {
+  background-color: 
+  #232323;
+  backdrop-filter: blur(15px);
+  border-radius: 1rem;
+  border: 2px solid var(--border-color);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+}
+
+.prize-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(59, 130, 246, 0.15);
+  border-color: var(--accent-blue);
+}
+
+.prize-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--accent-indigo);
+}
+
+.prizes-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 0.5rem;
+}
+.prizes-title h1{
+ color:#f1563f
+}
+
+
+.prize-amount {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.prize-swags {
+  font-size: 0.875rem;
+  color: rgba(241, 86, 63, 0.7);
+}
+
+@media (max-width: 768px) {
   .prizes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
-  
-  .prize-card {
-    background-color: var(--blur-opacity);
-    backdrop-filter: blur(15px);
-    border-radius: 1rem;
-    border: 2px solid var(--border-color);
-    padding: 2rem;
-    text-align: center;
-    color: var(--text-primary);
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
-  }
-  
-  .prize-card:hover {
-    transform: scale(1.05);
-    background-color: rgba(59, 130, 246, 0.15);
-    border-color: var(--accent-blue);
-  }
-  
-  .prize-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: var(--accent-indigo);
-  }
-  
-  .prize-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-blue);
-    margin-bottom: 0.5rem;
-  }
-  
-  .prize-amount {
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-  }
-  
-  .prize-swags {
-    font-size: 0.875rem;
-    color: rgba(224, 231, 255, 0.7);
-  }
-  
-  @media (max-width: 768px) {
-    .prizes-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}

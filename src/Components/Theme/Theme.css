@@ -1,77 +1,85 @@
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Oi&family=Sigmar+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Joti+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Joti+One&family=Markazi+Text:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Joti+One&family=Markazi+Text:wght@400..700&family=Rubik+Iso&display=swap');
+/* Custom properties */
 :root {
+  /* Colors */
   --background-color: #fefadc;
   --primary-box-color: #e94f37;
   --card-color: #232323;
   --text-color: #ffffff;
-  --card-height: 350px; /* Increased height */
-  --transition-speed: 0.6s;
   --shadow-color: rgba(0, 0, 0, 0.3);
+  
+  /* Dimensions */
+  --container-max-width: 1800px;
+  --card-min-width: 280px;
+  --card-max-width: 350px;
+  
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Typography */
+  --font-family-display: "Sigmar One", serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3.5rem;
+  
+  /* Transitions */
+  --transition-speed: 0.6s;
+  --transition-timing: ease;
 }
 
+/* Base styles */
 .hackathon-container {
   min-height: 100vh;
   background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: clamp(var(--spacing-sm), 2vw, var(--spacing-xl));
 }
 
 .content-box {
   background-color: var(--primary-box-color);
   border-radius: 25px;
-  padding: 3rem;
+  padding: clamp(var(--spacing-lg), 3vw, var(--spacing-xl));
   width: 100%;
-  max-width: 1300px;
+  max-width: var(--container-max-width);
   box-shadow: 0 6px 20px var(--shadow-color);
 }
 
-/* Increase width for large screens */
-@media (min-width: 1050px) {
-  .content-box {
-    max-width: 1500px;
-  }
-}
-
+/* Typography */
 h1 {
   color: var(--text-color);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl));
   text-align: center;
   text-shadow: 3px 3px 8px var(--shadow-color);
-  font-family: "Sigmar One", serif;
+  font-family: var(--font-family-display);
 }
 
-/* Default layout (mobile-first) */
+/* Cards Grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--card-min-width)), 1fr));
+  gap: clamp(var(--spacing-md), 2vw, var(--spacing-lg));
   width: 100%;
-  padding: 1rem;
+  padding: var(--spacing-md);
 }
 
-/* Force all cards into one row for large screens */
-@media (min-width: 1050px) {
-  .cards-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap; /* Ensures responsiveness */
-  }
-
-  .problem-card {
-    flex: 1;
-    max-width: 350px;
-  }
-}
-
+/* Card Component */
 .problem-card {
-  height: var(--card-height);
+  height: clamp(220px, 40vh, 350px);
   perspective: 1000px;
   cursor: pointer;
+  transition: transform 0.3s var(--transition-timing);
 }
 
 .card-inner {
@@ -87,58 +95,43 @@ h1 {
   transform: rotateY(180deg);
 }
 
+/* Card Faces */
 .card-front,
 .card-back {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 85%;
   backface-visibility: hidden;
   border-radius: 20px;
   background-color: var(--card-color);
   color: var(--text-color);
-  padding: 2rem;
+  padding: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 6px 20px var(--shadow-color);
 }
 
-/* Grey shadow for word boxes */
-.card-front h2,
-.card-back h3,
-.card-back li {
-  text-shadow: 2px 2px 6px var(--shadow-color);
-}
-
-.card-front {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .card-back {
   transform: rotateY(180deg);
-  overflow: hidden; /* Removes scrollbar */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  overflow: hidden;
 }
 
+/* Card Content */
 .card-front h2 {
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-size: 2rem;
+  letter-spacing: 2.5px;
   margin: 0;
-  font-family: "Sigmar One", serif;
+  font-family: "Bangers", serif;
 }
 
 .card-back h3 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  margin-bottom: 1rem;
-  font-family: "Sigmar One", serif;
-}
-
-.problem-section,
-.solution-section {
-  margin-bottom: 1.5rem;
+  font-size: 15px;
+  font-weight:2px;
+  margin-bottom: var(--spacing-md);
+  color:red;
+  font-family: "Bangers", serif;
+  font-style:normal;
 }
 
 .card-back ul {
@@ -148,48 +141,65 @@ h1 {
 }
 
 .card-back li {
-  margin-bottom: 0.5rem;
-  font-size: clamp(1rem, 1.5vw, 1rem);
-  font-family: "Sigmar One", serif;
+  margin-bottom: var(--spacing-sm);
+  font-size: 13px;
+  font-family: "Bangers", serif;
+  letter-spacing: 1.5px;
+  font-style: normal
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hackathon-container {
-    padding: 1rem;
-  }
-
-  .cards-grid {
-    gap: 1rem;
-  }
-
-  :root {
-    --card-height: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hackathon-container {
-    padding: 0.5rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  :root {
-    --card-height: 220px;
-  }
-}
-
-/* Animations and hover effects */
+/* Hover Effects */
 .problem-card:hover {
   transform: translateY(-5px);
-  transition: transform 0.3s ease;
 }
 
 .card-front:hover,
 .card-back:hover {
   box-shadow: 0 8px 25px var(--shadow-color);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s var(--transition-timing);
+}
+
+/* Large Screen Layout */
+@media (min-width: 1050px) {
+  .cards-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+  }
+  
+  .problem-card {
+    flex: 1;
+    max-width: var(--card-max-width);
+  }
+}
+
+/* Medium Screen Adjustments */
+@media (max-width: 768px) {
+  .hackathon-container {
+    padding: var(--spacing-md);
+  }
+
+  .cards-grid {
+    gap: var(--spacing-md);
+  }
+
+  .problem-card {
+    max-width: 320px; /* Adjust max-width for better fit on smaller screens */
+  }
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 480px) {
+  .hackathon-container {
+    padding: var(--spacing-sm);
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-card {
+    max-width: 100%; /* Full-width cards on small screens */
+  }
 }
