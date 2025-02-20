@@ -13,12 +13,12 @@ const platinumSponsors = [
 ];
 
 const goldSponsors = [
-  { name: 'Devfolio', logo: devfolio, link: 'http://devfolio.co' },
+  { name: 'Devfolio', logo: devfolio, link: 'http://devfolio.co',alt: 'DEVFOLIO LOGO' },
 ];
 
 const silverSponsors = [
-  { name: 'ETHIndia', logo: EthIndia, link: 'https://ethindia.co' },
-  { name: 'Polygon', logo: polygon, link: 'https://polygon.technology/' },
+  { name: 'ETHIndia', logo: EthIndia, link: 'https://ethindia.co',alt: 'ETHINDIA LOGO' },
+  { name: 'Polygon', logo: polygon, link: 'https://polygon.technology/',alt: 'POLYGON LOGO' },
 ];
 
 const Sponsorship = () => {
