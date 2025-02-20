@@ -8,14 +8,14 @@ const Hackathon = () => {
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
-    
+
     return () => {
       document.body.removeChild(script);
     };
   }, []);
 
   return (
-    <div className="hackathon-container">
+    <div className="hackathon-container" style={{ overflowX: "hidden" }}>
       <div className="content-box">
         <h1>What is Code for Change</h1>
 
@@ -25,8 +25,7 @@ const Hackathon = () => {
             <strong>Code for Change</strong> is a <strong>24-hour offline hackathon</strong> by
             <strong> NSHM Knowledge Campus, Durgapur</strong>, in collaboration with the
             <strong> Open Source Student Development Club</strong>. It features two rounds: an online idea submission
-            followed by an on-campus 24-hour coding challenge for the top 10 teams. Showcase creativity, collaborate,
-            and solve real-world problems! 🚀
+            followed by an on-campus 24-hour coding challenge for the top 10 teams. 🚀
           </p>
         </div>
 
@@ -39,7 +38,6 @@ const Hackathon = () => {
               className="apply-button"
               data-hackathon-slug="code-for-change-1"
               data-button-theme="light"
-              style={{ height: "44px", width: "312px" }}
             ></div>
             {/* Discord Button */}
             <button className="discord-btn">Join Discord</button>

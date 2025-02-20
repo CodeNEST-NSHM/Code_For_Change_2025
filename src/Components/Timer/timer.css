@@ -8,7 +8,6 @@
   --shadow-color: rgba(0, 0, 0, 0.3);
   --button-hover-color: #f0a800;
 }
-
 .hackathon-container {
   min-height: 100vh;
   background-color: var(--background-color);
@@ -63,9 +62,17 @@ h1 {
 }
 
 /* Buttons */
-.register-btn, .discord-btn {
-  background-color: #ffffff;
-  color: var(--primary-box-color);
+.apply-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 312px;
+}
+
+.discord-btn {
+  background-color: #7289da;
+  color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px 20px;
@@ -74,31 +81,14 @@ h1 {
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 3px 6px var(--shadow-color);
-  flex: 1; /* Allow buttons to stretch */
   max-width: 300px;
   text-align: center;
 }
-.apply-button {
-  font-style: italic;
-  text-decoration: underline;
-  font-weight: bold;
-  font-family: "Arial", sans-serif; /* Change to any preferred font */
-}
-
-
-.register-btn:hover, .discord-btn:hover {
-  background-color: var(--card-color);
-  color: #ffffff;
-}
-
-.discord-btn {
-  background-color: #7289da;
-  color: #ffffff;
-}
 
 .discord-btn:hover {
-  background-color:rgb(253, 253, 255);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #7289da;
+  border-color: #7289da;
 }
 
 /* Responsive Design */
@@ -118,7 +108,7 @@ h1 {
     gap: 1rem;
   }
 
-  .register-btn, .discord-btn {
-    width: 100%; /* Full width on small screens */
+  .apply-button, .discord-btn {
+    width: 100%;
   }
 }
