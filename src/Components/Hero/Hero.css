@@ -33,6 +33,7 @@
   font-family: "Sigmar One", serif;
   font-size: clamp(2.5rem, 10vw, 7rem);
   font-weight: bold;
+  margin-top: 100px;
   margin-bottom: 1rem;
   line-height: 1.2;
   word-wrap: break-word;

@@ -1,10 +1,5 @@
-/* Navbar.css */
 :root {
-    --hamburger-color: black; /* Change to black */
-}
-
-.light {
-    --hamburger-color: black; /* Ensure it stays black in light mode */
+    --hamburger-color: black; /* Change from white to black */
 }
 
 .navbar {
@@ -12,21 +7,24 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fefadc;
+    background-color: transparent;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
+    border-bottom:5px solid black;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2.3rem 2rem;
+    padding: 1rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+   
 }
 
 .nav-logo a {
@@ -41,7 +39,7 @@
     align-items: center;
     gap: 2rem;
     position: relative; /* Reset any absolute positioning for smaller screens */
-    background-color: transparent; /* Remove background when full-screen */
+    full-screen */
     transform: none; /* Reset any transformations */
     padding: 0; /* Reset padding */
 }
@@ -49,15 +47,19 @@
 .nav-links a {
     padding: 0.75rem 0;
     text-align: center;
-    color: 
-    #f1563f;
+    color:black;
     text-decoration: none;
     transition: color 0.3s ease;
+
 }
 
 .nav-links a.active {
-    color: #2563eb;
+    color: red;
+    background-color:#393e41;
+    border:2px solid black;
+    border-radius:10px;
     font-weight: bold;
+    width: 100px;
 }
 
 .nav-links.active {
@@ -78,7 +80,7 @@
     padding: 0.75rem;
     border-radius: 0.5rem;
     text-align: center;
-    background-color: var(--theme-toggle-background);
+    
     color: var(--theme-toggle-color);
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -99,6 +101,7 @@
     cursor: pointer;
     position: relative;
     z-index: 1001; 
+    color:black;
     
 }
 
@@ -108,7 +111,7 @@
     height: 3px;
     border-radius: 2px;
     transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-    background-color: var(--hamburger-color); /* Dynamically changes based on mode */
+    background-color: black;
 }
 
 .hamburger span:not(:last-child) {

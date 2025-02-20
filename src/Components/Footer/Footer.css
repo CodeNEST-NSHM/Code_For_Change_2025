@@ -10,6 +10,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  color:#232323;
   gap: 1rem; /* Reduced overall gap between sections */
 }
 
@@ -42,7 +43,7 @@
 .footer-bottom {
   margin-top: 1rem; /* Reduced margin between content and bottom text */
   font-size: 1rem;
-  color: #ffffff;
+  color:#232323;
 }
 
 .footer-bottom p {
@@ -50,7 +51,7 @@
 }
 
 .footer-link {
-  color: rgb(105, 109, 114);
+  color: #232323;
   text-decoration: none;
   font-weight: 600;
 }

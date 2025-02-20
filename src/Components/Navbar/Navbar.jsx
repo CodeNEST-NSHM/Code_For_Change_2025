@@ -10,64 +10,37 @@ const Navbar = () => {
     document.body.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
-
   const toggleMenu = () => {
     setIsMenuOpen((prevMenu) => !prevMenu);
   };
 
   const handleLinkClick = () => {
-    setIsMenuOpen(false); // Close the menu when a link is clicked
+    setIsMenuOpen(false); // Close menu on link click
   };
 
   return (
     <nav className={`navbar ${isDarkMode ? "dark" : "light"}`}>
       <div className="nav-content">
-        {/* Logo Section */}
-        {/* <div className="nav-logo">
-          <a href="#">OSSDC X NSHMKC DURGAPUR</a>
-        </div> */}
-
-        {/* Hamburger Menu */}
-        <div
-          className={`hamburger ${isMenuOpen ? "active" : ""}`}
-          onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
-          role="button"
-          aria-expanded={isMenuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+        <NavLink to="/" className="nav-logo" onClick={handleLinkClick}>
+          Home
+        </NavLink>
+          <NavLink to="/sponsorship" onClick={handleLinkClick}>
+            Sponsorship
+          </NavLink>
+          <NavLink to="/partners" onClick={handleLinkClick}>
+            Community Partners
+          </NavLink>
+          <NavLink to="/team" onClick={handleLinkClick}>
+            Team
+          </NavLink>
         </div>
 
-        {/* Navigation Links */}
-        <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-          <a href="/organizer"
-            className={({ isActive }) => `${isActive ? "active" : ""}`}
-            onClick={handleLinkClick}
-          >
-            Sponsorship
-          </a>
-          <a href="/organizer"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={handleLinkClick}
-          >
-            Community Partners
-          </a>
-          <a href="/organizer"
-            className={({ isActive }) => (isActive ? "active" : "")}
-            onClick={handleLinkClick}
-          >
-              Team
-          </a>
-
-          {/* Dark Mode Toggle */}
-          {/* <button className="theme-toggle" onClick={toggleDarkMode}>
-            {isDarkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-          </button> */}
+        {/* Hamburger Menu for Mobile */}
+        <div className="hamburger" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </nav>
