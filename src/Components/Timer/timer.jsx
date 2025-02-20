@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./timer.css";
 
 const Hackathon = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="hackathon-container">
       <div className="content-box">
@@ -22,7 +33,12 @@ const Hackathon = () => {
         <div className="time-and-registration-box">
           <p className="event-date">📅 25-02-2025 to 05-04-2025</p>
           <div className="button-group">
-            <button className="register-btn">Register Now</button>
+            <div 
+              className="apply-button"
+              data-hackathon-slug="code-for-change-1"
+              data-button-theme="light"
+              style={{ height: "44px", width: "312px" }}
+            ></div>
             <button className="discord-btn">Join Discord</button>
           </div>
         </div>

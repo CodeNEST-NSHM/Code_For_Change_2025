@@ -4,40 +4,52 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: 
-  #fefadc; /* Dark background */
-  color: white;
+  background-color: #fefadc;
+  color: black;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .sponsorship-title {
   font-size: 2.5rem;
-  color: #f1563f; /* Light blue for the title */
-  margin-bottom: 2rem; /* Adjusted bottom margin */
+  color: #f1563f;
+  margin-bottom: 2rem;
   font-weight: 700;
-  transition: font-size 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.sponsor-category {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted min size for responsiveness */
-  gap: 1.5rem; /* Reduced gap for better spacing */
-  max-width: 1200px;
-  width: 100%;
-  transition: gap 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .sponsor-card {
   background: #232323;
   border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem; /* Reduced padding for smaller cards */
+  padding: 1.5rem;
   text-align: center;
-  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Reduced shadow for smaller screens */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .sponsor-card:hover {
@@ -45,81 +57,54 @@
 }
 
 .sponsor-logo {
-  max-width: 80%; /* Reduced max width for logos */
+  max-width: 80%;
   height: auto;
-  margin-bottom: 0.8rem; /* Adjusted margin */
+  margin-bottom: 0.8rem;
   transition: transform 0.3s ease;
 }
 
 .sponsor-name {
-  font-size: 1.1rem; /* Reduced font size */
+  font-size: 1.1rem;
   font-weight: 600;
   color: grey;
-  margin-top: 0.5rem;
-  transition: font-size 0.3s ease, color 0.3s ease;
 }
 
 .sponsor-card:hover .sponsor-name {
-  color: #60a5fa; /* Change text color on hover */
+  color: #60a5fa;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Media query for tablets and smaller screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .sponsorship-container {
-    padding: 1.5rem; /* Reduced padding for smaller screens */
-  }
-
   .sponsorship-title {
-    font-size: 2rem; /* Smaller title font size */
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
   }
 
   .sponsor-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 1rem; /* Reduced gap */
+    flex-direction: column;
+    align-items: center;
   }
 
   .sponsor-card {
-    padding: 1rem; /* Smaller padding for cards */
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Smaller shadow */
-  }
-
-  .sponsor-logo {
-    max-width: 70%; /* Smaller logo width */
-    margin-bottom: 0.5rem;
-  }
-
-  .sponsor-name {
-    font-size: 1rem; /* Reduced font size for smaller screens */
+    width: 180px;
+    height: 180px;
   }
 }
 
-/* Media query for extra small screens */
 @media (max-width: 480px) {
   .sponsorship-container {
-    padding: 1rem; /* Minimal padding */
+    padding: 1rem;
   }
 
   .sponsorship-title {
-    font-size: 1.8rem; /* Smaller title font size */
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
   }
 
   .sponsor-card {
-    padding: 0.8rem; /* Compact card padding */
-    border-radius: 8px; /* Smaller border radius */
-  }
-
-  .sponsor-logo {
-    max-width: 60%; /* Even smaller logo size */
+    width: 200px;
+    height: 200px;
   }
 
   .sponsor-name {
-    font-size: 0.9rem; /* Smallest font size */
+    font-size: 1rem;
   }
 }
