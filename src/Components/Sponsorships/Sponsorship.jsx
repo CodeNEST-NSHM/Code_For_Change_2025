@@ -8,31 +8,31 @@ import polygon from '../../assets/images/polygon.jpg';
 import './Sponsorship.css';
 
 const platinumSponsors = [
-  { name: 'NSHM Knowledge Campus, Durgapur', logo: nshm, link: 'https://www.nshm.com/' },
-  { name: 'Open Source Student Development Club', logo: ossdc, link: 'https://ossdc.in/' },
+  { name: 'NSHM Knowledge Campus, Durgapur', logo: nshm, link: 'https://www.nshm.com/', alt: 'NSHM Knowledge Campus Logo' },
+  { name: 'Open Source Student Development Club', logo: ossdc, link: 'https://ossdc.in/', alt: 'Open Source Student Development Club Logo' },
 ];
 
 const goldSponsors = [
-  { name: 'Devfolio', logo: devfolio, link: 'http://devfolio.co',alt: 'DEVFOLIO LOGO' },
+  { name: 'Devfolio', logo: devfolio, link: 'http://devfolio.co', alt: 'DEVFOLIO LOGO' },
 ];
 
 const silverSponsors = [
-  { name: 'ETHIndia', logo: EthIndia, link: 'https://ethindia.co',alt: 'ETHINDIA LOGO' },
-  { name: 'Polygon', logo: polygon, link: 'https://polygon.technology/',alt: 'POLYGON LOGO' },
+  { name: 'ETHIndia', logo: EthIndia, link: 'https://ethindia.co', alt: 'ETHINDIA LOGO' },
+  { name: 'Polygon', logo: polygon, link: 'https://polygon.technology/', alt: 'POLYGON LOGO' },
 ];
 
 const Sponsorship = () => {
   return (
     <motion.div 
       className="sponsorship-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ scale: 0.9 }}
+      animate={{ scale: 1 }}
       transition={{ duration: 0.6 }}
     >
       <motion.h1 
         className="sponsorship-title"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
         transition={{ type: 'spring', stiffness: 200 }}
       >
         Our Sponsors
@@ -75,19 +75,19 @@ const SponsorCard = ({ sponsor, index }) => (
     whileTap={{ scale: 0.95 }}
     transition={{ type: 'spring', stiffness: 300 }}
   >
-    <a href={sponsor.link} target="_blank" rel="noopener noreferrer" className="sponsor-link">
+    <a href={sponsor.link} target="_blank" rel="noopener noreferrer" className="sponsor-link" style={{ textDecoration: 'none' }}>
       <motion.img 
         src={sponsor.logo} 
-        alt={sponsor.name} 
+        alt={sponsor.alt} 
         className="sponsor-logo"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ x: -20 }}
+        animate={{ x: 0 }}
         transition={{ delay: index * 0.2, duration: 0.6 }}
       />
       <motion.p 
         className="sponsor-name"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 20 }}
+        animate={{ y: 0 }}
         transition={{ delay: index * 0.2, duration: 0.6 }}
       >
         {sponsor.name} 

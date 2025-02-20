@@ -7,19 +7,8 @@ const Hackathon = () => {
     script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
     script.defer = true;
-    script.onload = () => {
-      setTimeout(() => {
-        if (window.Devfolio) {
-          window.Devfolio.Button.init({
-            buttonSelector: ".apply-button",
-            key: "code-for-change-1",
-          });
-        }
-      }, 1000); // Small delay for initialization
-    };
-
     document.body.appendChild(script);
-
+    
     return () => {
       document.body.removeChild(script);
     };
@@ -49,7 +38,6 @@ const Hackathon = () => {
             <div
               className="apply-button"
               data-hackathon-slug="code-for-change-1"
-              alt ="Apply with Devfolio"
               data-button-theme="light"
               style={{ height: "44px", width: "312px" }}
             ></div>

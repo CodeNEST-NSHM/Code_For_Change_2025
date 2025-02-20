@@ -78,6 +78,13 @@ h1 {
   max-width: 300px;
   text-align: center;
 }
+.apply-button {
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: "Arial", sans-serif; /* Change to any preferred font */
+}
+
 
 .register-btn:hover, .discord-btn:hover {
   background-color: var(--card-color);
