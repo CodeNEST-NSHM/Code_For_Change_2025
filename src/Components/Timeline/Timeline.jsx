@@ -4,10 +4,10 @@ import { useRef } from 'react';
 import './Timeline.css';
 
 const timelineData = [
-  { date: "01 Feb - 15 Feb 2025", title: "Registration Phase", description: "Open for all participants" },
-  { date: "16 Feb - 30 Feb 2025", title: "Idea Submission", description: "Submit your ideas" },
-  { date: "01 Mar - 05 Mar 2025", title: "Selection Process", description: "Project evaluation" },
-  { date: "10 Mar - 11 Mar 2025", title: "Hackathon Event", description: "Final event days" },
+  { date: "21 March - 14 March 2025", title: "Registration Phase", description: "Open for all participants" },
+  { date: "15 March - 17 March 2025", title: "Project Submission", description: "Submit your Project" },
+  { date: "18 March - 18 March 2025", title: "Selection Process", description: "Project evaluation" },
+  { date: "21 Mar 2025", title: "Hackathon Event", description: "Final event days" },
 ];
 
 const TimelineItem = ({ event, index, activeIndex }) => {

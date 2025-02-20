@@ -11,6 +11,11 @@
   font-size: 4rem;
   color: #e94f37;
   margin-bottom: 2rem;
+  text-shadow:  
+    -2px -2px 0 black,  
+    2px -2px 0 black,  
+    -2px 2px 0 black,  
+    2px 2px 0 black; 
 }
 
 .timeline-container {
@@ -63,6 +68,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   padding: 1rem;
+  border: 3px solid black;
 }
 
 .timeline-card:hover {

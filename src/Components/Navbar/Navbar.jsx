@@ -26,9 +26,9 @@ const Navbar = () => {
     <nav className={`navbar ${isDarkMode ? "dark" : "light"}`}>
       <div className="nav-content">
         {/* Logo Section */}
-        <div className="nav-logo">
+        {/* <div className="nav-logo">
           <a href="#">OSSDC X NSHMKC DURGAPUR</a>
-        </div>
+        </div> */}
 
         {/* Hamburger Menu */}
         <div
@@ -49,19 +49,25 @@ const Navbar = () => {
             className={({ isActive }) => `${isActive ? "active" : ""}`}
             onClick={handleLinkClick}
           >
-            Organizer
+            Sponsorship
           </a>
           <a href="/organizer"
             className={({ isActive }) => (isActive ? "active" : "")}
             onClick={handleLinkClick}
           >
-            Code of Conduct
+            Community Partners
+          </a>
+          <a href="/organizer"
+            className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={handleLinkClick}
+          >
+              Team
           </a>
 
           {/* Dark Mode Toggle */}
-          <button className="theme-toggle" onClick={toggleDarkMode}>
+          {/* <button className="theme-toggle" onClick={toggleDarkMode}>
             {isDarkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-          </button>
+          </button> */}
         </div>
       </div>
     </nav>

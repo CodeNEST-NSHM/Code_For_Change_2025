@@ -1,4 +1,12 @@
 /* Navbar.css */
+:root {
+    --hamburger-color: black; /* Change to black */
+}
+
+.light {
+    --hamburger-color: black; /* Ensure it stays black in light mode */
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -90,7 +98,8 @@
     height: 25px;
     cursor: pointer;
     position: relative;
-    z-index: 1001; /* Ensure it stays above other elements */
+    z-index: 1001; 
+    
 }
 
 .hamburger span {
@@ -104,6 +113,7 @@
 
 .hamburger span:not(:last-child) {
     margin-bottom: 5px;
+    
 }
 
 .hamburger.active span:nth-child(1) {
@@ -153,7 +163,8 @@
         left: 0;
         width: 100%;
         flex-direction: column;
-        background-color: var(--nav-background-color);
+        background-color: 
+        #393e41;
         padding: 1rem;
         display: none;
         backdrop-filter: blur(10px);

@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h3>Follow CodeNEST, NSHM, OSSDC</h3>
+          <h3>Stay Updated by following us</h3>
           <div className="social-links">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img
