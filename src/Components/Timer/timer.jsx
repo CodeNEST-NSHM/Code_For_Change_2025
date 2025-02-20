@@ -7,7 +7,19 @@ const Hackathon = () => {
     script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
     script.defer = true;
+    script.onload = () => {
+      setTimeout(() => {
+        if (window.Devfolio) {
+          window.Devfolio.Button.init({
+            buttonSelector: ".apply-button",
+            key: "code-for-change-1",
+          });
+        }
+      }, 1000); // Small delay for initialization
+    };
+
     document.body.appendChild(script);
+
     return () => {
       document.body.removeChild(script);
     };
@@ -33,12 +45,15 @@ const Hackathon = () => {
         <div className="time-and-registration-box">
           <p className="event-date">📅 25-02-2025 to 05-04-2025</p>
           <div className="button-group">
-            <div 
+            {/* Apply with Devfolio Button */}
+            <div
               className="apply-button"
               data-hackathon-slug="code-for-change-1"
+              alt ="Apply with Devfolio"
               data-button-theme="light"
               style={{ height: "44px", width: "312px" }}
             ></div>
+            {/* Discord Button */}
             <button className="discord-btn">Join Discord</button>
           </div>
         </div>
