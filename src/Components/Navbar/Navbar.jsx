@@ -18,19 +18,24 @@ const Navbar = () => {
     setIsMenuOpen(false); // Close menu on link click
   };
 
+  const openGoogleForm = (e, url) => {
+    e.preventDefault(); // Prevents navigation
+    window.open(url, "_blank"); // Opens Google Form in a new tab
+  };
+
   return (
     <nav className={`navbar ${isDarkMode ? "dark" : "light"}`}>
       <div className="nav-content">
         <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-        <NavLink to="/" className="nav-logo" onClick={handleLinkClick}>
-          Home
-        </NavLink>
-          <NavLink to="/sponsorship" onClick={handleLinkClick}>
+          <NavLink to="/" className="nav-logo" onClick={handleLinkClick}>
+            Home
+          </NavLink>
+          <a href="https://forms.gle/fxAjMr6v2UEQBhd69" onClick={(e) => openGoogleForm(e, "https://forms.gle/fxAjMr6v2UEQBhd69")}>
             Sponsorship
-          </NavLink>
-          <NavLink to="/partners" onClick={handleLinkClick}>
+          </a>
+          <a href="https://forms.gle/b7ar32kRcjqjJZh99" onClick={(e) => openGoogleForm(e, "https://forms.gle/b7ar32kRcjqjJZh99")}>
             Community Partners
-          </NavLink>
+          </a>
           <NavLink to="/team" onClick={handleLinkClick}>
             Team
           </NavLink>

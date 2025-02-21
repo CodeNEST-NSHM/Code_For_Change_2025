@@ -39,7 +39,6 @@
     align-items: center;
     gap: 2rem;
     position: relative; /* Reset any absolute positioning for smaller screens */
-    full-screen */
     transform: none; /* Reset any transformations */
     padding: 0; /* Reset padding */
 }
