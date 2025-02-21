@@ -103,7 +103,7 @@ const Team = () => {
         {teamMembers.map((member, index) => (
           <div key={index} className="team-card">
             <div className="profile-image">
-              <img src={member.image} alt={member.name} />
+              <img src={member.image} alt={member.name} loading="lazy" />
               <div className="image-overlay"></div>
             </div>
             <h3 className="team-name">{member.name}</h3>

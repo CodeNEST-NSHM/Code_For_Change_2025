@@ -44,10 +44,8 @@ const Navbar = () => {
         {/* Hamburger Menu for Mobile */}
         <div className="hamburger" onClick={toggleMenu}>
           <span> <a href="https://forms.gle/fxAjMr6v2UEQBhd69" onClick={(e) => openGoogleForm(e, "https://forms.gle/fxAjMr6v2UEQBhd69")}>
-            Sponsorship
           </a></span>
           <span><a href="https://forms.gle/b7ar32kRcjqjJZh99" onClick={(e) => openGoogleForm(e, "https://forms.gle/b7ar32kRcjqjJZh99")}>
-            Community Partners
           </a></span>
           <span></span>
         </div>
