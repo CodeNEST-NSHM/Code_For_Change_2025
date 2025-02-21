@@ -37,7 +37,7 @@ const Navbar = () => {
             Community Partners
           </a>
           <NavLink to="/team" onClick={handleLinkClick}>
-            Team
+            Members
           </NavLink>
         </div>
 
