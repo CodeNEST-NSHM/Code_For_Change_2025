@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Team.css";
 import rony from "../../assets/images/team/rony.png";
 import baishali from "../../assets/images/team/Baishali.png";
@@ -37,7 +37,7 @@ const teamMembers = [
     image: "https://via.placeholder.com/150",
     social: {
       linkedin: linkedin,
-      instagram:instagram,
+      instagram: instagram,
     },
   },
   {
@@ -63,7 +63,6 @@ const teamMembers = [
       linkedin: linkedin,
       instagram: instagram,
     },
-    
   },
   {
     name: "SAATHI PAUL",
@@ -72,7 +71,6 @@ const teamMembers = [
       linkedin: linkedin,
       instagram: instagram,
     },
-    
   },
   {
     name: "RIYA",
@@ -81,7 +79,6 @@ const teamMembers = [
       linkedin: linkedin,
       instagram: instagram,
     },
-    
   },
   {
     name: "BAISHALI",
@@ -90,7 +87,6 @@ const teamMembers = [
       linkedin: linkedin,
       instagram: instagram,
     },
-    
   },
   {
     name: "PUJA",
@@ -99,6 +95,7 @@ const teamMembers = [
       linkedin: linkedin,
       instagram: instagram,
     },
+<<<<<<< HEAD
     
     
   },
@@ -121,39 +118,88 @@ const teamMembers = [
     },
     
     
+=======
+>>>>>>> b98876a23d46b9cfbc137b091c9e550aadd3202e
   },
-  
+];
+
+// Sample data for Mentors
+const mentors = [
+  {
+    name: "MENTOR 1",
+    image: "https://via.placeholder.com/150",
+    role: "Mentor Role",
+    social: {
+      linkedin: "https://linkedin.com",
+      instagram: "https://instagram.com",
+    },
+  },
+  // Add other mentors here
 ];
 
 const Team = () => {
+  const [activeTab, setActiveTab] = useState("teams");
+
   return (
     <div className="team-container">
+      <div className="tab-buttons">
+        <button
+          className={`tab-button ${activeTab === "mentors" ? "active" : ""}`}
+          onClick={() => setActiveTab("mentors")}
+        >
+          Mentors
+        </button>
+        <button
+          className={`tab-button ${activeTab === "teams" ? "active" : ""}`}
+          onClick={() => setActiveTab("teams")}
+        >
+          Teams
+        </button>
+      </div>
       <h2 className="team-title">
         THE <span className="highlight">OG</span> CREW
       </h2>
       <div className="team-grid">
-        {teamMembers.map((member, index) => (
-          <div key={index} className="team-card">
-            <div className="profile-image">
-              <img src={member.image} alt={member.name} />
-              <div className="image-overlay"></div>
+        {(activeTab === "teams" ? teamMembers : mentors).map(
+          (member, index) => (
+            <div key={index} className="team-card">
+              <div className="profile-image">
+                <img src={member.image} alt={member.name} loading="lazy" />
+                <div className="image-overlay"></div>
+              </div>
+              <h3 className="team-name">{member.name}</h3>
+              {member.role && <p className="team-role">{member.role}</p>}
+              <div className="social-icons">
+                {member.social.linkedin !== "#" && (
+                  <a
+                    href={member.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={linkedin}
+                      alt="LinkedIn"
+                      className="social-icon linkedin-icon"
+                    />
+                  </a>
+                )}
+                {member.social.instagram !== "#" && (
+                  <a
+                    href={member.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={instagram}
+                      alt="Instagram"
+                      className="social-icon instagram-icon"
+                    />
+                  </a>
+                )}
+              </div>
             </div>
-            <h3 className="team-name">{member.name}</h3>
-            <p className="team-role">{member.role}</p>
-            <div className="social-icons">
-              {member.social.linkedin !== "#" && (
-                <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  <img src={linkedin} alt="LinkedIn" className="social-icon linkedin-icon" />
-                </a>
-              )}
-              {member.social.instagram !== "#" && (
-                <a href={member.social.instagram} target="_blank" rel="noopener noreferrer">
-                  <img src={instagram} alt="Instagram" className="social-icon instagram-icon" />
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </div>
   );
