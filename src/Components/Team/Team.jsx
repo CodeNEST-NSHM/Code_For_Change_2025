@@ -5,16 +5,19 @@ import baishali from "../../assets/images/team/Baishali.png";
 import soumaditya from "../../assets/images/team/soumaditya.png";
 import sayan from "../../assets/images/team/sayan.png";
 import puja from "../../assets/images/team/puja.png";
-import ankita from "../../assets/images/team/puja.png";
+import ankita from "../../assets/images/team/ankita.jpg";
 import saathi from "../../assets/images/team/saathi.png";
 import riya from "../../assets/images/team/riya.png";
+import sohali from "../../assets/images/team/sohali.jpg";
+import shreya from "../../assets/images/team/shreya.jpg";
+import faizn from "../../assets/images/team/faizan.jpg";
 import linkedin from "../../assets/images/icon/linkedin.png";
 import instagram from "../../assets/images/icon/instagram.png";
 
 // Sample data for the OG Crew
 const teamMembers = [
   {
-    name: "SOUMADITYA",
+    name: "SOUMADITYA PAL",
     image: soumaditya,
     social: {
       linkedin: linkedin,
@@ -30,7 +33,7 @@ const teamMembers = [
     },
   },
   {
-    name: "AASHISH",
+    name: "AASHISH PRASAD",
     image: "https://via.placeholder.com/150",
     social: {
       linkedin: linkedin,
@@ -38,7 +41,7 @@ const teamMembers = [
     },
   },
   {
-    name: "SAYAN",
+    name: "SAYAN GORAI",
     image: sayan,
     social: {
       linkedin: linkedin,
@@ -46,7 +49,15 @@ const teamMembers = [
     },
   },
   {
-    name: "ANKITA",
+    name: "FAIZAN KHAN",
+    image: faizn,
+    social: {
+      linkedin: linkedin,
+      instagram: instagram,
+    },
+  },
+  {
+    name: "ANKITA CHOWDHURY",
     image: ankita,
     social: {
       linkedin: linkedin,
@@ -88,6 +99,27 @@ const teamMembers = [
       linkedin: linkedin,
       instagram: instagram,
     },
+    
+    
+  },
+  {
+    name: "SOHALI",
+    image: sohali,
+    social: {
+      linkedin: linkedin,
+      instagram: instagram,
+    },
+    
+    
+  },
+  {
+    name: "SHEREYA",
+    image: shreya,
+    social: {
+      linkedin: linkedin,
+      instagram: instagram,
+    },
+    
     
   },
   
