@@ -95,7 +95,6 @@ const teamMembers = [
       linkedin: linkedin,
       instagram: instagram,
     },
-<<<<<<< HEAD
     
     
   },
@@ -118,8 +117,6 @@ const teamMembers = [
     },
     
     
-=======
->>>>>>> b98876a23d46b9cfbc137b091c9e550aadd3202e
   },
 ];
 
