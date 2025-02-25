@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -22,25 +24,16 @@ const Footer = () => {
           <h3>Stay Updated by following us</h3>
           <div className="social-links">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img
-                src="facebook-icon.png"
-                alt="Facebook"
-                className="social-icon"
-              />
+              <FontAwesomeIcon icon={faFacebook} size="2x" className="social-icon facebook" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img
-                src="twitter-icon.png"
-                alt="Twitter"
-                className="social-icon"
-              />
+              <FontAwesomeIcon icon={faTwitter} size="2x" className="social-icon twitter" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img
-                src="instagram-icon.png"
-                alt="Instagram"
-                className="social-icon"
-              />
+              <FontAwesomeIcon icon={faInstagram} size="2x" className="social-icon instagram" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" className="social-icon linkedin" />
             </a>
           </div>
         </div>
@@ -48,7 +41,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
-          Built with ❤️ by{" "}
+          Built with ❤️ by {" "}
           <a
             href="https://codenestnshm.netlify.app/"
             target="_blank"
