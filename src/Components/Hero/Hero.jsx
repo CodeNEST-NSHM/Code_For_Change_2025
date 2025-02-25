@@ -1,8 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './Hero.css';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import "./Hero.css";
 
 const HeroSection = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="hero-container">
       <div className="content">
@@ -12,7 +24,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          {"Code for Change 2025".split('      ').map((char, index) => (
+          {"Code for Change 2025".split("      ").map((char, index) => (
             <motion.span 
               key={index} 
               className="animated-char shadow-text"
@@ -40,6 +52,13 @@ const HeroSection = () => {
         >
           OSSDC and NSHM Knowledge Campus, Durgapur
         </motion.p>
+
+        {/* Apply with Devfolio Button */}
+        <div
+          className="apply-button"
+          data-hackathon-slug="code-for-change-1"
+          data-button-theme="light"
+        ></div>
       </div>
     </div>
   );
