@@ -22,7 +22,12 @@ const Hackathon = () => {
           <p className="event-date">📅 25-02-2025 to 05-04-2025</p>
           <div className="button-group">
             {/* Discord Button */}
-            <button className="discord-btn">Join Discord</button>
+            <button 
+              className="discord-btn" 
+              onClick={() => window.open("https://discord.gg/sbEhZ2suTB", "_blank")}
+            >
+              Join Discord
+            </button>
           </div>
         </div>
       </div>
