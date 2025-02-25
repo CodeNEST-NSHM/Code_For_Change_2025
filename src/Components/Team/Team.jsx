@@ -17,12 +17,14 @@ import akash from "../../assets/images/team/akash.jpg";
 import nayab from "../../assets/images/team/nayab.jpg";
 import atique from "../../assets/images/team/atique.jpg";
 import dipankar from "../../assets/images/team/dipankar.jpg";
+import aashish from "../../assets/images/team/aashish.jpg";
 import linkedin from "../../assets/images/icon/linkedin.png";
 import instagram from "../../assets/images/icon/instagram.png";
 
 const teamMembers = [
   { name: "SOUMADITYA PAL", image: soumaditya, social: { linkedin: "https://www.linkedin.com/in/soumaditya-pal-109029309 ", instagram: "https://www.instagram.com/soumaditya.pal/" } },
   { name: "RONY", image: rony, social: { linkedin: "https://www.linkedin.com/in/mowazzem-uddin-ahmed-96689b276 ", instagram: "https://www.instagram.com/rony.op_/" } },
+  { name: "AASHISH PRASAD", image: aashish, social: { linkedin: "https://www.linkedin.com/in/aashishprasad65 ", instagram: "https://www.instagram.com/aashishprasad65?igsh=dzk0cmx1b2ViY3hu" } },
   { name: "AKASH LAHA", image: akash, social: { linkedin: "https://www.linkedin.com/in/akash-laha-799427244  ", instagram: "https://www.instagram.com/_akash_._laha_/" } },
   { name: "SAYAN GORAI", image: sayan, social: { linkedin: "https://www.linkedin.com/in/sayangarai ", instagram: "https://www.instagram.com/sayan_garai45" } },
   { name: "FAIZAN KHAN", image: faizn, social: { linkedin: "https://www.linkedin.com/in/faizan-khan-41002224b ", instagram: "https://www.instagram.com/_noisy_boi_khan_?igsh=MXAyeXJleTFuZnVnZg%3D%3D&utm_source=qr" } },
