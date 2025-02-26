@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTwitter, faInstagram, faLinkedin, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -23,17 +23,14 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Stay Updated by following us</h3>
           <div className="social-links">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebook} size="2x" className="social-icon facebook" />
+          <a href="https://www.linkedin.com/company/codenest-osdc/ " target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" className="social-icon twitter" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTwitter} size="2x" className="social-icon twitter" />
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/codenest_osdc/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} size="2x" className="social-icon instagram" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} size="2x" className="social-icon linkedin" />
+            <a href="https://discord.gg/uj39vnq9JP" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faDiscord} size="2x" className="social-icon linkedin" />
             </a>
           </div>
         </div>

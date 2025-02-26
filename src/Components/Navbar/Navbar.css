@@ -1,5 +1,5 @@
 :root {
-    --hamburger-color: black; /* Change from white to black */
+    --hamburger-color: black;
 }
 
 .navbar {
@@ -12,7 +12,7 @@
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom:5px solid black;
+    border-bottom: 5px solid black;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -23,8 +23,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-   
 }
 
 .nav-logo a {
@@ -35,61 +33,37 @@
 }
 
 .nav-links {
-    display: flex; /* Default display for larger screens */
+    display: flex;
     align-items: center;
     gap: 2rem;
-    position: relative; /* Reset any absolute positioning for smaller screens */
-    transform: none; /* Reset any transformations */
-    padding: 0; /* Reset padding */
 }
 
 .nav-links a {
-    padding: 0.75rem 0;
+    padding: 0.75rem 1rem;
     text-align: center;
-    color:black;
+    color: black;
     text-decoration: none;
-    transition: color 0.3s ease;
-
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
 }
 
+/* Hover effect */
+.nav-links a:hover {
+    color: white;
+    background-color: black;
+    transform: scale(1.1);
+}
+
+/* Active Link */
 .nav-links a.active {
     color: red;
-    background-color:#393e41;
-    border:2px solid black;
-    border-radius:10px;
+    background-color: #393e41;
+    border: 2px solid black;
+    border-radius: 10px;
     font-weight: bold;
-    width: 100px;
 }
 
-.nav-links.active {
-    display: flex;
-    transform: translateY(0);
-}
-
-.nav-links a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.nav-links a:last-child {
-    border-bottom: none;
-}
-
-.theme-toggle {
-    border: none;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    
-    color: var(--theme-toggle-color);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.theme-toggle:hover {
-    background-color: var(--theme-toggle-hover);
-}
-
-/* Hamburger Styles */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -98,10 +72,8 @@
     width: 30px;
     height: 25px;
     cursor: pointer;
-    position: relative;
-    z-index: 1001; 
-    color:black;
-    
+    color: black;
+    transition: transform 0.3s ease;
 }
 
 .hamburger span {
@@ -113,9 +85,13 @@
     background-color: black;
 }
 
+/* Hamburger Hover */
+.hamburger:hover {
+    transform: scale(1.1);
+}
+
 .hamburger span:not(:last-child) {
     margin-bottom: 5px;
-    
 }
 
 .hamburger.active span:nth-child(1) {
@@ -123,7 +99,7 @@
 }
 
 .hamburger.active span:nth-child(2) {
-    opacity: 0; /* Disappear smoothly */
+    opacity: 0;
 }
 
 .hamburger.active span:nth-child(3) {
@@ -131,26 +107,7 @@
 }
 
 .hamburger:hover span {
-    background-color: #4ade80; /* Soft green hover effect */
-}
-
-/* Light and Dark Mode Variable Definitions */
-:root {
-    --hamburger-color: white;
-    --nav-background-color: #111827;
-    --link-color: white;
-    --theme-toggle-background: #374151;
-    --theme-toggle-color: white;
-    --theme-toggle-hover: #4b5563;
-}
-
-.light {
-    --hamburger-color: #111827;
-    --nav-background-color: #f3f4f6;
-    --link-color: #111827;
-    --theme-toggle-background: #d1d5db;
-    --theme-toggle-color: #111827;
-    --theme-toggle-hover: #9ca3af;
+    background-color: #4ade80;
 }
 
 /* Responsive Styles */
@@ -165,12 +122,9 @@
         left: 0;
         width: 100%;
         flex-direction: column;
-        background-color: 
-        #393e41;
+        background-color: #393e41;
         padding: 1rem;
         display: none;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
         transform: translateY(-100%);
         transition: transform 0.3s ease-in-out, background-color 0.3s ease;
     }
@@ -188,12 +142,13 @@
         color: white;
     }
 
-    .nav-links a:last-child {
-        border-bottom: none;
+    .nav-links a:hover {
+        color:
+        #393e41 ;
+        background-color: white;
     }
 
-    .theme-toggle {
-        width: 100%;
-        /* margin-top: 1rem; */
+    .nav-links a:last-child {
+        border-bottom: none;
     }
 }
