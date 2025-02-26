@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './Theme.css';
 
 const ProblemCard = ({ title, problems }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div 
+    <motion.div 
       className={`problem-card ${isFlipped ? 'flipped' : ''}`}
       onClick={() => setIsFlipped(!isFlipped)}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      animate={{ y: [0, -5, 0] }} // Subtle jumping animation
+      transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.5 }}
     >
-      <div className="card-inner">
+      <motion.div 
+        className="card-inner"
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.1 }}
+      >
         <div className="card-front">
           <h2>{title}</h2>
+          <p className="click-hint" style={{ opacity: 0.6 }}>Click to flip</p>
         </div>
         <div className="card-back">
           <div className="problem-section">
@@ -23,8 +33,8 @@ const ProblemCard = ({ title, problems }) => {
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
