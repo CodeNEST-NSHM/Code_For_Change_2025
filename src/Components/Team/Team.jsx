@@ -1,52 +1,93 @@
-import React, { useState } from "react";
-import "./Team.css";
-import rony from "../../assets/images/team/rony.png";
-import baishali from "../../assets/images/team/Baishali.png";
-import soumaditya from "../../assets/images/team/soumaditya.png";
-import sayan from "../../assets/images/team/sayan.png";
-import puja from "../../assets/images/team/puja.png";
-import ankita from "../../assets/images/team/ankita.jpg";
-import saathi from "../../assets/images/team/saathi.png";
-import riya from "../../assets/images/team/riya.png";
-import sohali from "../../assets/images/team/sohali.jpg";
-import shreya from "../../assets/images/team/shreya.jpg";
-import faizn from "../../assets/images/team/faizan.jpg";
-import subhadip from "../../assets/images/team/shuvodip.jpg";
-import anshua from "../../assets/images/team/anusha.jpg";
-import akash from "../../assets/images/team/akash.jpg";
-import nayab from "../../assets/images/team/nayab.jpg";
-import atique from "../../assets/images/team/atique.jpg";
-import dipankar from "../../assets/images/team/dipankar.jpg";
-import aashish from "../../assets/images/team/aashish.jpg";
+import React, { useState, useEffect } from "react";
+import "./Team.css"; // Import CSS
 import linkedin from "../../assets/images/icon/linkedin.png";
 import instagram from "../../assets/images/icon/instagram.png";
 
-const teamMembers = [
-  { name: "SOUMADITYA PAL", image: soumaditya, social: { linkedin: "https://www.linkedin.com/in/soumaditya-pal-109029309 ", instagram: "https://www.instagram.com/soumaditya.pal/" } },
-  { name: "RONY", image: rony, social: { linkedin: "https://www.linkedin.com/in/mowazzem-uddin-ahmed-96689b276 ", instagram: "https://www.instagram.com/rony.op_/" } },
-  { name: "AASHISH PRASAD", image: aashish, social: { linkedin: "https://www.linkedin.com/in/aashishprasad65 ", instagram: "https://www.instagram.com/aashishprasad65?igsh=dzk0cmx1b2ViY3hu" } },
-  { name: "AKASH LAHA", image: akash, social: { linkedin: "https://www.linkedin.com/in/akash-laha-799427244  ", instagram: "https://www.instagram.com/_akash_._laha_/" } },
-  { name: "SAYAN GORAI", image: sayan, social: { linkedin: "https://www.linkedin.com/in/sayangarai ", instagram: "https://www.instagram.com/sayan_garai45" } },
-  { name: "FAIZAN KHAN", image: faizn, social: { linkedin: "https://www.linkedin.com/in/faizan-khan-41002224b ", instagram: "https://www.instagram.com/_noisy_boi_khan_?igsh=MXAyeXJleTFuZnVnZg%3D%3D&utm_source=qr" } },
-  { name: "MD NAYAB", image: nayab, social: { linkedin: "https://www.linkedin.com/in/nayab-jalal-0b3514256", instagram: "https://www.instagram.com/__nayabjalal__/" } },
-  { name: "SUBHADIP HAZRA", image: subhadip, social: { linkedin: "#", instagram: "https://www.instagram.com/sahil_hazra?igsh=am1iZjhkZWJha3Zx" } },
-  { name: "ANKITA CHOWDHURY", image: ankita, social: { linkedin: "https://www.linkedin.com/in/ankita-chowdhury-45a9b9250 ", instagram: "https://www.instagram.com/ankita.is.here?igsh=MWxlYng5MnR3eGltaA==" } },
-  { name: "SAATHI PAUL", image: saathi, social: { linkedin: "https://www.linkedin.com/in/saathipaul ", instagram: "https://www.instagram.com/saathi_paul" } },
-  { name: "RIYA", image: riya, social: { linkedin: "https://www.linkedin.com/in/riya-bhattacharjee-ba6329258 ", instagram: "https://www.instagram.com/riya_bhattacharya_01?igsh=MWYxcXdtazltbTRzcA==" } },
-  { name: "ATIQUE", image: atique, social: { linkedin: "https://www.linkedin.com/in/atique-ahmed-7590b8284", instagram: "https://www.instagram.com/riya_bhattacharya_01?igsh=MWYxcXdtazltbTRzcA==" } },
-  { name: "BAISHALI", image: baishali, social: { linkedin: "https://www.linkedin.com/in/baishali-mukherjee-211316284 ", instagram: "https://www.instagram.com/b.a.i.s.h.a.l.i_19?igsh=ajJuZjc5N2w0aWp4" } },
-  { name: "PUJA", image: puja, social: { linkedin: "https://www.linkedin.com/in/puja-rakshit-b509292b1 ", instagram: "https://www.instagram.com/_poojarakshit_?igsh=NGY2c3hiaDJub2Y4" } },
-  { name: "SOHALI", image: sohali, social: { linkedin: "https://www.linkedin.com/in/sohali-shyam-64426430b ", instagram: "https://www.instagram.com/sohali_shyam_19?igsh=c2J1YXZqZDVpMmR0" } },
-  { name: "SHREYA", image: shreya, social: { linkedin: "https://www.linkedin.com/in/shreya-banerjee-591253293 ", instagram: "https://www.instagram.com/shreyabanerjee05?igsh=NXd1c2p3ZDQxZnRq" } },
-  { name: "ANSHUA MITRA", image: anshua, social: { linkedin: "#", instagram: "https://www.instagram.com/_anushamitra?igsh=MXU0ZmhsY2l6eDAybg==" } },
-  { name: "DIPANKAR", image: dipankar, social: { linkedin: "#", instagram: "https://www.instagram.com/_dipankar_bauri_?igsh=MXY2M2hwMDNybmFoeA==" } }
-];
-
 const Team = () => {
   const [activeTab, setActiveTab] = useState("teams");
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const membersPerPage = 8;
+
+  useEffect(() => {
+    if (activeTab === "teams") {
+      const loadTeamData = async () => {
+        setLoading(true);
+
+        const imageImports = [
+          import("../../assets/images/team/soumaditya.png"),
+          import("../../assets/images/team/rony.png"),
+          import("../../assets/images/team/aashish.jpg"),
+          import("../../assets/images/team/akash.jpg"),
+          import("../../assets/images/team/sayan.png"),
+          import("../../assets/images/team/faizan.jpg"),
+          import("../../assets/images/team/nayab.jpg"),
+          import("../../assets/images/team/shuvodip.jpg"),
+          import("../../assets/images/team/ankita.jpg"),
+          import("../../assets/images/team/saathi.png"),
+          import("../../assets/images/team/riya.png"),
+          import("../../assets/images/team/Baishali.png"),
+          import("../../assets/images/team/puja.jpg"),
+          import("../../assets/images/team/sohali.jpg"),
+          import("../../assets/images/team/shreya.jpg"),
+          import("../../assets/images/team/anusha.jpg"),
+          import("../../assets/images/team/richa.jpg"),
+          import("../../assets/images/team/smriti.jpg"),
+          import("../../assets/images/team/dipankar.jpg"),
+        ];
+
+        try {
+          const importedImages = await Promise.all(imageImports);
+
+          const members = [
+            { name: "SOUMADITYA PAL", image: importedImages[0].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "RONY", image: importedImages[1].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "AASHISH PRASAD", image: importedImages[2].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "AKASH LAHA", image: importedImages[3].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "SAYAN GORAI", image: importedImages[4].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "FAIZAN KHAN", image: importedImages[5].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "MD NAYAB", image: importedImages[6].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "SUBHADIP HAZRA", image: importedImages[7].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "ANKITA CHOWDHURY", image: importedImages[8].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "SAATHI PAUL", image: importedImages[9].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "RIYA BHATTACHARYA", image: importedImages[10].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "BAISHALI", image: importedImages[11].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "PUJA RAKSHIT", image: importedImages[12].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "SOHALI SHYAM", image: importedImages[13].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "SHREYA BANERJEE", image: importedImages[14].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "ANSHUA MITRA", image: importedImages[15].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "RICHA SINGHA DEB", image: importedImages[16].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "SMRITI PRADHAN", image: importedImages[17].default, social: { linkedin: "#", instagram: "#" } },
+            { name: "DIPANKAR", image: importedImages[18].default, social: { linkedin: "#", instagram: "#" } },
+          ];
+
+          setTeamMembers(members);
+          setLoading(false);
+        } catch (error) {
+          console.error("Error loading team images:", error);
+          setLoading(false);
+        }
+      };
+
+      loadTeamData();
+    }
+  }, [activeTab]);
+
+  const totalPages = Math.ceil(teamMembers.length / membersPerPage);
+  const indexOfLastMember = currentPage * membersPerPage;
+  const indexOfFirstMember = indexOfLastMember - membersPerPage;
+  const currentMembers = teamMembers.slice(indexOfFirstMember, indexOfLastMember);
+
+  const paginate = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
 
   return (
     <div className="team-container">
+      {/* Tab Buttons */}
       <div className="tab-buttons">
         <button className={`tab-button ${activeTab === "mentors" ? "active" : ""}`} onClick={() => setActiveTab("mentors")}>
           Mentors
@@ -55,30 +96,58 @@ const Team = () => {
           Teams
         </button>
       </div>
-      <h2 className="team-title">THE <span className="highlight">OG</span> CREW</h2>
-      <div className="team-grid">
-        {teamMembers.map((member, index) => (
-          <div key={index} className="team-card" style={{ zIndex: 1 }}>
-            <div className="profile-image" style={{ position: "relative", zIndex: 2 }}>
-              <img src={member.image} alt={member.name} loading="eager" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            </div>
-            <h3 className="team-name">{member.name}</h3>
-         
-            <div className="social-icons">
-              {member.social.linkedin !== "#" && (
-                <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
-                  <img src={linkedin} alt="LinkedIn" className="social-icon linkedin-icon" />
-                </a>
-              )}
-              {member.social.instagram !== "#" && (
-                <a href={member.social.instagram} target="_blank" rel="noopener noreferrer">
-                  <img src={instagram} alt="Instagram" className="social-icon instagram-icon" />
-                </a>
-              )}
-            </div>
+
+      <h2 className="team-title">
+        {activeTab === "mentors" ? "MENTORS" : "THE"} <span className="highlight">{activeTab === "mentors" ? "SECTION" : "OG"}</span> {activeTab === "mentors" ? "COMING SOON" : "CREW"}
+      </h2>
+
+      {activeTab === "mentors" ? (
+        <div className="coming-soon">
+          <h3>🚀 Coming Soon 🚀</h3>
+        </div>
+      ) : loading ? (
+        <div className="loading-spinner">Loading team members...</div>
+      ) : (
+        <>
+          <div className="team-grid">
+            {currentMembers.map((member, index) => (
+              <div key={index} className="team-card">
+                <div className="profile-image">
+                  <img src={member.image} alt={member.name} loading="lazy" />
+                </div>
+                <h3 className="team-name">{member.name}</h3>
+                <div className="social-icons">
+                  {member.social.linkedin !== "#" && (
+                    <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
+                      <img src={linkedin} alt="LinkedIn" className="social-icon linkedin-icon" />
+                    </a>
+                  )}
+                  {member.social.instagram !== "#" && (
+                    <a href={member.social.instagram} target="_blank" rel="noopener noreferrer">
+                      <img src={instagram} alt="Instagram" className="social-icon instagram-icon" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+
+          {/* Pagination */}
+          <div className="pagination">
+            <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} className="page-button">
+              ⬅ Prev
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button key={i + 1} onClick={() => paginate(i + 1)} className={`page-button ${currentPage === i + 1 ? "active" : ""}`}>
+                {i + 1}
+              </button>
+            ))}
+            <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === totalPages} className="page-button">
+              Next ➡
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
