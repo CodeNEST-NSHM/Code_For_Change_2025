@@ -22,7 +22,7 @@ const Team = () => {
           import("../../assets/images/team/akash.jpg"),
           import("../../assets/images/team/sayan.jpg"),
           import("../../assets/images/team/faizan.jpg"),
-          import("../../assets/images/team/nayab.jpg"),
+          import("../../assets/images/team/nayab.png"),
           import("../../assets/images/team/shuvodip.jpg"),
           import("../../assets/images/team/nachiketa.jpg"),
           import("../../assets/images/team/ankita.jpg"),
@@ -38,6 +38,8 @@ const Team = () => {
           import("../../assets/images/team/dipankar.jpg"),
           import("../../assets/images/team/amisha.jpg"),
           import("../../assets/images/team/ali.jpg"),
+          import("../../assets/images/team/vivek.jpg"),
+          import("../../assets/images/team/sumitLaha.jpg"),
         ];
 
         try {
@@ -48,11 +50,14 @@ const Team = () => {
             { name: "MU AHMED", image: importedImages[1].default, social: { linkedin: "#", instagram: "https://www.instagram.com/rony.op_/" } },
             { name: "AASHISH PRASAD", image: importedImages[2].default, social: { linkedin: "#", instagram: "https://www.instagram.com/aashishprasad65/" } },
             { name: "AKASH LAHA", image: importedImages[3].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_akash_._laha_/" } },
+            { name: "NACHIKETA PAHARI", image: importedImages[8].default, social: { linkedin: "#", instagram: "https://www.instagram.com/pahari_624/" } },
+            { name: "AMISHA GUPTA", image: importedImages[20].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ameesha__31/" } },
+            { name: "VIVEK GHOSH", image: importedImages[22].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_.viv.ek_/" } },
+            { name: "SUMIT LAHA", image: importedImages[23].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sumit.laha.420/" } },
+            { name: "SHUVODIP HAZRA", image: importedImages[7].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sahil_hazra/" } },
             { name: "SAYAN GORAI", image: importedImages[4].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sayan_garai45/" } },
             { name: "FAIZAN KHAN", image: importedImages[5].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_noisy_boi_khan_/" } },
             { name: "MD NAYAB", image: importedImages[6].default, social: { linkedin: "#", instagram: "https://www.instagram.com/__nayabjalal__/" } },
-            { name: "SHUVODIP HAZRA", image: importedImages[7].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sahil_hazra/" } },
-            { name: "NACHIKETA PAHARI", image: importedImages[8].default, social: { linkedin: "#", instagram: "https://www.instagram.com/pahari_624/" } },
             { name: "ANKITA CHOWDHURY", image: importedImages[9].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ankita.is.here/" } },
             { name: "SAATHI PAUL", image: importedImages[10].default, social: { linkedin: "#", instagram: "https://www.instagram.com/saathi_paul/" } },
             { name: "RIYA BHATTACHARYA", image: importedImages[11].default, social: { linkedin: "#", instagram: "https://www.instagram.com/riya_bhattacharya_01/" } },
@@ -64,7 +69,6 @@ const Team = () => {
             { name: "RICHA SINGHA DEB", image: importedImages[17].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_richa95_/" } },
             { name: "SMRITI PRADHAN", image: importedImages[18].default, social: { linkedin: "#", instagram: "https://www.instagram.com/its_.smriti/" } },
             { name: "DIPANKAR BAURI", image: importedImages[19].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_dipankar_bauri_/" } },
-            { name: "AMISHA GUPTA", image: importedImages[20].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ameesha__31?igsh=bDh2MWE5Z2w0dWk4" } },
             { name: "SHAHE HASAN RAZA KHAN", image: importedImages[21].default, social: { linkedin: "#", instagram: "https://www.instagram.com/shahe_hasan/" } },
           ];
 
