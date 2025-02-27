@@ -3,15 +3,23 @@
   text-align: center;
   margin-top: 100px;
 }
-body{
+
+body {
   overflow-x: hidden;
+  overflow-y: auto;
 }
-::-webkit-scrollbar{
-  display: none;
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
+
 main {
   padding: 20px;
 }
+
 * {
   background-color: transparent;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
