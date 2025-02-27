@@ -36,7 +36,7 @@ const Team = () => {
           import("../../assets/images/team/richa.jpg"),
           import("../../assets/images/team/smriti.jpg"),
           import("../../assets/images/team/dipankar.jpg"),
-          import("../../assets/images/team/amisha.jpg"),
+          import("../../assets/images/team/amisha.jpp"),
           import("../../assets/images/team/ali.jpg"),
           import("../../assets/images/team/vivek.jpg"),
           import("../../assets/images/team/sumitLaha.jpg"),
@@ -50,12 +50,16 @@ const Team = () => {
             { name: "MU AHMED", image: importedImages[1].default, social: { linkedin: "#", instagram: "https://www.instagram.com/rony.op_/" } },
             { name: "AASHISH PRASAD", image: importedImages[2].default, social: { linkedin: "#", instagram: "https://www.instagram.com/aashishprasad65/" } },
             { name: "AKASH LAHA", image: importedImages[3].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_akash_._laha_/" } },
+<<<<<<< HEAD
             { name: "NACHIKETA PAHARI", image: importedImages[8].default, social: { linkedin: "#", instagram: "https://www.instagram.com/pahari_624/" } },
             { name: "AMISHA GUPTA", image: importedImages[20].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ameesha__31/" } },
             { name: "VIVEK GHOSH", image: importedImages[22].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_.viv.ek_/" } },
             { name: "SUMIT LAHA", image: importedImages[23].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sumit.laha.420/" } },
             { name: "SHUVODIP HAZRA", image: importedImages[7].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sahil_hazra/" } },
             { name: "SAYAN GORAI", image: importedImages[4].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sayan_garai45/" } },
+=======
+            { name: "SAYAN GARAI", image: importedImages[4].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sayan_garai45/" } },
+>>>>>>> 598d308 (UPDATE TEAM)
             { name: "FAIZAN KHAN", image: importedImages[5].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_noisy_boi_khan_/" } },
             { name: "MD NAYAB", image: importedImages[6].default, social: { linkedin: "#", instagram: "https://www.instagram.com/__nayabjalal__/" } },
             { name: "ANKITA CHOWDHURY", image: importedImages[9].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ankita.is.here/" } },
