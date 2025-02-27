@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Team.css"; // Import CSS
+import "./Team.css";
 import linkedin from "../../assets/images/icon/linkedin.png";
 import instagram from "../../assets/images/icon/instagram.png";
 
@@ -12,81 +12,82 @@ const Team = () => {
 
   useEffect(() => {
     if (activeTab === "teams") {
-      const loadTeamData = async () => {
-        setLoading(true);
-
-        const imageImports = [
-          import("../../assets/images/team/soumaditya.png"),
-          import("../../assets/images/team/rony.png"),
-          import("../../assets/images/team/aashish.jpg"),
-          import("../../assets/images/team/akash.jpg"),
-          import("../../assets/images/team/sayan.jpg"),
-          import("../../assets/images/team/faizan.jpg"),
-          import("../../assets/images/team/nayab.png"),
-          import("../../assets/images/team/shuvodip.jpg"),
-          import("../../assets/images/team/nachiketa.jpg"),
-          import("../../assets/images/team/ankita.jpg"),
-          import("../../assets/images/team/saathi.png"),
-          import("../../assets/images/team/riya.png"), 
-          import("../../assets/images/team/Baishali.png"),
-          import("../../assets/images/team/puja.jpg"),
-          import("../../assets/images/team/sohali.jpg"),
-          import("../../assets/images/team/shreya.jpg"),
-          import("../../assets/images/team/anusha.jpg"),
-          import("../../assets/images/team/richa.jpg"),
-          import("../../assets/images/team/smriti.jpg"),
-          import("../../assets/images/team/dipankar.jpg"),
-          import("../../assets/images/team/amisha.jpp"),
-          import("../../assets/images/team/ali.jpg"),
-          import("../../assets/images/team/vivek.jpg"),
-          import("../../assets/images/team/sumitLaha.jpg"),
-        ];
-
-        try {
-          const importedImages = await Promise.all(imageImports);
-
-          const members = [
-            { name: "SOUMADITYA PAL", image: importedImages[0].default, social: { linkedin: "#", instagram: "https://www.instagram.com/soumaditya.pal/" } },
-            { name: "MU AHMED", image: importedImages[1].default, social: { linkedin: "#", instagram: "https://www.instagram.com/rony.op_/" } },
-            { name: "AASHISH PRASAD", image: importedImages[2].default, social: { linkedin: "#", instagram: "https://www.instagram.com/aashishprasad65/" } },
-            { name: "AKASH LAHA", image: importedImages[3].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_akash_._laha_/" } },
-<<<<<<< HEAD
-            { name: "NACHIKETA PAHARI", image: importedImages[8].default, social: { linkedin: "#", instagram: "https://www.instagram.com/pahari_624/" } },
-            { name: "AMISHA GUPTA", image: importedImages[20].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ameesha__31/" } },
-            { name: "VIVEK GHOSH", image: importedImages[22].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_.viv.ek_/" } },
-            { name: "SUMIT LAHA", image: importedImages[23].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sumit.laha.420/" } },
-            { name: "SHUVODIP HAZRA", image: importedImages[7].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sahil_hazra/" } },
-            { name: "SAYAN GORAI", image: importedImages[4].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sayan_garai45/" } },
-=======
-            { name: "SAYAN GARAI", image: importedImages[4].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sayan_garai45/" } },
->>>>>>> 598d308 (UPDATE TEAM)
-            { name: "FAIZAN KHAN", image: importedImages[5].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_noisy_boi_khan_/" } },
-            { name: "MD NAYAB", image: importedImages[6].default, social: { linkedin: "#", instagram: "https://www.instagram.com/__nayabjalal__/" } },
-            { name: "ANKITA CHOWDHURY", image: importedImages[9].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ankita.is.here/" } },
-            { name: "SAATHI PAUL", image: importedImages[10].default, social: { linkedin: "#", instagram: "https://www.instagram.com/saathi_paul/" } },
-            { name: "RIYA BHATTACHARYA", image: importedImages[11].default, social: { linkedin: "#", instagram: "https://www.instagram.com/riya_bhattacharya_01/" } },
-            { name: "BAISHALI MUKHERJEE", image: importedImages[12].default, social: { linkedin: "#", instagram: "https://www.instagram.com/b.a.i.s.h.a.l.i_19/" } },
-            { name: "PUJA RAKSHIT", image: importedImages[13].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_poojarakshit_/" } },
-            { name: "SOHALI SHYAM", image: importedImages[14].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sohali_shyam_19/" } },
-            { name: "SHREYA BANERJEE", image: importedImages[15].default, social: { linkedin: "#", instagram: "https://www.instagram.com/shreyabanerjee05/" } },
-            { name: "ANSHUA MITRA", image: importedImages[16].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_anushamitra/" } },
-            { name: "RICHA SINGHA DEB", image: importedImages[17].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_richa95_/" } },
-            { name: "SMRITI PRADHAN", image: importedImages[18].default, social: { linkedin: "#", instagram: "https://www.instagram.com/its_.smriti/" } },
-            { name: "DIPANKAR BAURI", image: importedImages[19].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_dipankar_bauri_/" } },
-            { name: "SHAHE HASAN RAZA KHAN", image: importedImages[21].default, social: { linkedin: "#", instagram: "https://www.instagram.com/shahe_hasan/" } },
-          ];
-
-          setTeamMembers(members);
-          setLoading(false);
-        } catch (error) {
-          console.error("Error loading team images:", error);
-          setLoading(false);
-        }
-      };
-
       loadTeamData();
+    } else {
+      // Reset loading state when switching to mentors tab
+      setLoading(false);
     }
   }, [activeTab]);
+
+  const loadTeamData = async () => {
+    setLoading(true);
+
+    const imageImports = [
+      import("../../assets/images/team/soumaditya.png"),
+      import("../../assets/images/team/rony.png"),
+      import("../../assets/images/team/aashish.jpg"),
+      import("../../assets/images/team/akash.jpg"),
+      import("../../assets/images/team/sayan.jpg"),
+      import("../../assets/images/team/faizan.jpg"),
+      import("../../assets/images/team/nayab.png"),
+      import("../../assets/images/team/shuvodip.jpg"),
+      import("../../assets/images/team/nachiketa.jpg"),
+      import("../../assets/images/team/ankita.jpg"),
+      import("../../assets/images/team/saathi.png"),
+      import("../../assets/images/team/riya.png"),
+      import("../../assets/images/team/Baishali.png"),
+      import("../../assets/images/team/puja.jpg"),
+      import("../../assets/images/team/sohali.jpg"),
+      import("../../assets/images/team/shreya.jpg"),
+      import("../../assets/images/team/anusha.jpg"),
+      import("../../assets/images/team/richa.jpg"),
+      import("../../assets/images/team/smriti.jpg"),
+      import("../../assets/images/team/dipankar.jpg"),
+      import("../../assets/images/team/amisha.jpg"),
+      import("../../assets/images/team/ali.jpg"),
+      import("../../assets/images/team/vivek.jpg"),
+      import("../../assets/images/team/sumitLaha.jpg"),
+    ];
+
+    try {
+      // Preload all images before rendering
+      const importedImages = await Promise.all(imageImports);
+
+      // Create member data with preloaded images
+      const members = [
+        { name: "SOUMADITYA PAL", image: importedImages[0].default, social: { linkedin: "#", instagram: "https://www.instagram.com/soumaditya.pal/" } },
+        { name: "MU AHMED", image: importedImages[1].default, social: { linkedin: "#", instagram: "https://www.instagram.com/rony.op_/" } },
+        { name: "AASHISH PRASAD", image: importedImages[2].default, social: { linkedin: "#", instagram: "https://www.instagram.com/aashishprasad65/" } },
+        { name: "AKASH LAHA", image: importedImages[3].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_akash_._laha_/" } },
+        { name: "SAYAN GARAI", image: importedImages[4].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sayan_garai45/" } },
+        { name: "FAIZAN KHAN", image: importedImages[5].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_noisy_boi_khan_/" } },
+        { name: "MD NAYAB", image: importedImages[6].default, social: { linkedin: "#", instagram: "https://www.instagram.com/__nayabjalal__/" } },
+        { name: "SHUVODIP HAZRA", image: importedImages[7].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sahil_hazra/" } },
+        { name: "NACHIKETA PAHARI", image: importedImages[8].default, social: { linkedin: "#", instagram: "https://www.instagram.com/pahari_624/" } },
+        { name: "ANKITA CHOWDHURY", image: importedImages[9].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ankita.is.here/" } },
+        { name: "SAATHI PAUL", image: importedImages[10].default, social: { linkedin: "#", instagram: "https://www.instagram.com/saathi_paul/" } },
+        { name: "RIYA BHATTACHARYA", image: importedImages[11].default, social: { linkedin: "#", instagram: "https://www.instagram.com/riya_bhattacharya_01/" } },
+        { name: "BAISHALI MUKHERJEE", image: importedImages[12].default, social: { linkedin: "#", instagram: "https://www.instagram.com/b.a.i.s.h.a.l.i_19/" } },
+        { name: "PUJA RAKSHIT", image: importedImages[13].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_poojarakshit_/" } },
+        { name: "SOHALI SHYAM", image: importedImages[14].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sohali_shyam_19/" } },
+        { name: "SHREYA BANERJEE", image: importedImages[15].default, social: { linkedin: "#", instagram: "https://www.instagram.com/shreyabanerjee05/" } },
+        { name: "ANSHUA MITRA", image: importedImages[16].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_anushamitra/" } },
+        { name: "RICHA SINGHA DEB", image: importedImages[17].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_richa95_/" } },
+        { name: "SMRITI PRADHAN", image: importedImages[18].default, social: { linkedin: "#", instagram: "https://www.instagram.com/its_.smriti/" } },
+        { name: "DIPANKAR BAURI", image: importedImages[19].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_dipankar_bauri_/" } },
+        { name: "AMISHA GUPTA", image: importedImages[20].default, social: { linkedin: "#", instagram: "https://www.instagram.com/ameesha__31/" } },
+        { name: "SHAHE HASAN RAZA KHAN", image: importedImages[21].default, social: { linkedin: "#", instagram: "https://www.instagram.com/shahe_hasan/" } },
+        { name: "VIVEK GHOSH", image: importedImages[22].default, social: { linkedin: "#", instagram: "https://www.instagram.com/_.viv.ek_/" } },
+        { name: "SUMIT LAHA", image: importedImages[23].default, social: { linkedin: "#", instagram: "https://www.instagram.com/sumit.laha.420/" } },
+      ];
+
+      setTeamMembers(members);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error loading team images:", error);
+      setLoading(false);
+    }
+  };
 
   const totalPages = Math.ceil(teamMembers.length / membersPerPage);
   const indexOfLastMember = currentPage * membersPerPage;
@@ -96,6 +97,12 @@ const Team = () => {
   const paginate = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
+      
+      // Scroll to top of team grid when changing pages
+      const teamGridElement = document.querySelector('.team-grid');
+      if (teamGridElement) {
+        teamGridElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -120,14 +127,17 @@ const Team = () => {
           <h3>🚀 Coming Soon 🚀</h3>
         </div>
       ) : loading ? (
-        <div className="loading-spinner">Loading team members...</div>
+        <div className="loading-spinner">
+          <div className="spinner"></div>
+          <p>Loading team members...</p>
+        </div>
       ) : (
         <>
           <div className="team-grid">
             {currentMembers.map((member, index) => (
               <div key={index} className="team-card">
                 <div className="profile-image">
-                  <img src={member.image} alt={member.name} loading="lazy" />
+                  <img src={member.image} alt={member.name} />
                 </div>
                 <h3 className="team-name">{member.name}</h3>
                 <div className="social-icons">
