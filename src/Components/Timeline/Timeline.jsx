@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import './Timeline.css';
 
 const timelineData = [
@@ -11,61 +11,32 @@ const timelineData = [
 
 const TimelineItem = ({ event, index, activeIndex }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-150px", amount: 0.3 });
   const controls = useAnimation();
 
-  // Only trigger animation when element comes into view
-  // Don't animate out when scrolling away
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
+    if (index === activeIndex) {
+      controls.start({ opacity: 1, y: 0, scale: 1 });
+    } else {
+      controls.start({ opacity: 0.5, y: 50, scale: 0.9 });
     }
-  }, [isInView, controls]);
-
-  const variants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50, 
-      scale: 0.9
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: { 
-        duration: 0.5, 
-        ease: "easeOut" 
-      }
-    }
-  };
-
-  // Calculate opacity based on active index - smoother transitions
-  const opacity = index === activeIndex 
-    ? 1 
-    : index < activeIndex 
-      ? 0.6 
-      : 0.8;
+  }, [activeIndex, index, controls]);
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={controls}
-      variants={variants}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
     >
       <div className={`timeline-dot ${index === activeIndex ? 'active' : ''}`}></div>
-      <motion.div 
-        className="timeline-card"
-        animate={{ opacity }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="timeline-card">
         <div className="timeline-content">
           <span className="timeline-date">{event.date}</span>
           <h3 className="timeline-title">{event.title}</h3>
           <p className="timeline-description">{event.description}</p>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -73,71 +44,44 @@ const TimelineItem = ({ event, index, activeIndex }) => {
 const Timeline = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
-  const scrollListenerActive = useRef(true);
-  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef(null); // Prevent frequent updates
 
   useEffect(() => {
     const handleScroll = () => {
-      // Skip if we shouldn't process this scroll event
-      if (!scrollListenerActive.current || !containerRef.current) return;
-      
-      // Throttle scroll updates
-      const currentScrollY = window.scrollY;
-      if (Math.abs(currentScrollY - lastScrollY.current) < 10) return;
-      lastScrollY.current = currentScrollY;
-      
-      // Temporarily disable scroll listener to prevent re-entry
-      scrollListenerActive.current = false;
-      
-      // Use requestAnimationFrame for smooth animation
-      requestAnimationFrame(() => {
-        if (!containerRef.current) return;
-        
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const containerTop = window.scrollY + containerRect.top;
-        const viewportMiddle = window.scrollY + (window.innerHeight / 2);
-        
-        // Get all timeline items
-        const items = Array.from(containerRef.current.querySelectorAll('.timeline-item'));
-        
-        // Find the currently active item
-        let newActiveIndex = 0;
-        items.forEach((item, index) => {
-          const itemTop = containerTop + item.offsetTop;
-          const itemHeight = item.offsetHeight;
-          const itemMiddle = itemTop + (itemHeight / 2);
-          
-          if (viewportMiddle >= itemMiddle) {
-            newActiveIndex = index;
+      if (!containerRef.current) return;
+
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+
+      scrollTimeout.current = setTimeout(() => {
+        requestAnimationFrame(() => {
+          const items = containerRef.current.querySelectorAll('.timeline-item');
+          const viewportMiddle = window.innerHeight / 2;
+          let newIndex = 0;
+
+          items.forEach((item, index) => {
+            const rect = item.getBoundingClientRect();
+            const itemMiddle = rect.top + rect.height / 2;
+            if (itemMiddle < viewportMiddle) {
+              newIndex = index;
+            }
+          });
+
+          // Prevent unnecessary updates
+          if (newIndex !== activeIndex) {
+            setActiveIndex(newIndex);
           }
         });
-        
-        // Only update if the active index changed
-        if (newActiveIndex !== activeIndex) {
-          setActiveIndex(newActiveIndex);
-        }
-        
-        // Re-enable scroll listener
-        setTimeout(() => {
-          scrollListenerActive.current = true;
-        }, 50); // Small delay to prevent too frequent updates
-      });
+      }, 100); // Smooth delay
     };
-    
-    // Initial calculation
-    handleScroll();
-    
-    // Add event listener with passive option for better performance
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout.current);
     };
   }, [activeIndex]);
-
-  // Calculate progress for the timeline line
-  const progressRatio = activeIndex / (timelineData.length - 1);
-  const lineProgress = Math.max(0, Math.min(1, progressRatio));
 
   return (
     <div className="timeline-wrapper">
@@ -146,20 +90,12 @@ const Timeline = () => {
         <div className="timeline-line-container">
           <motion.div
             className="timeline-line"
-            animate={{ 
-              scaleY: lineProgress,
-              transition: { duration: 0.3, ease: "easeOut" }
-            }}
+            animate={{ scaleY: (activeIndex + 1) / timelineData.length }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           />
         </div>
-
         {timelineData.map((event, index) => (
-          <TimelineItem 
-            key={index} 
-            event={event} 
-            index={index} 
-            activeIndex={activeIndex} 
-          />
+          <TimelineItem key={index} event={event} index={index} activeIndex={activeIndex} />
         ))}
       </div>
     </div>
