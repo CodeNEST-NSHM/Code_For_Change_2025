@@ -23,14 +23,14 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Stay Updated by following us</h3>
           <div className="social-links">
-          <a href="https://www.linkedin.com/company/codenest-osdc/ " target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} size="2x" className="social-icon twitter" />
+            <a href="https://www.linkedin.com/company/codenest-osdc/ " target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" className="social-icon" />
             </a>
             <a href="https://www.instagram.com/codenest_osdc/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} size="2x" className="social-icon instagram" />
+              <FontAwesomeIcon icon={faInstagram} size="2x" className="social-icon" />
             </a>
             <a href="https://discord.gg/uj39vnq9JP" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faDiscord} size="2x" className="social-icon linkedin" />
+              <FontAwesomeIcon icon={faDiscord} size="2x" className="social-icon" />
             </a>
           </div>
         </div>
