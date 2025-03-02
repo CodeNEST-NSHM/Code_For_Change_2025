@@ -22,10 +22,11 @@ const Team = () => {
           import("../../assets/images/team/akash.jpg"),
           import("../../assets/images/team/sayan.jpg"),
           import("../../assets/images/team/faizan.jpg"),
-          import("../../assets/images/team/nayab.jpg"),
+          import("../../assets/images/team/nayab.png"),
           import("../../assets/images/team/shuvodip.jpg"),
           import("../../assets/images/team/nachiketa.jpg"),
-          import("../../assets/images/team/shubhankar.jpg"),
+          import("../../assets/images/team/nachiketa.jpg"),// dummy
+          // import("../../assets/images/team/shubhankar.jpg"),
           import("../../assets/images/team/ankita.jpg"),
           import("../../assets/images/team/saathi.png"),
           import("../../assets/images/team/riya.png"), 
@@ -33,7 +34,8 @@ const Team = () => {
           import("../../assets/images/team/puja.jpg"),
           import("../../assets/images/team/sohali.jpg"),
           import("../../assets/images/team/shreya.jpg"),
-          import("../../assets/images/team/supriti.jpg"),
+          import("../../assets/images/team/shreya.jpg"), // dummy
+          // import("../../assets/images/team/supriti.jpg"),
           import("../../assets/images/team/anusha.jpg"),
           import("../../assets/images/team/richa.jpg"),
           import("../../assets/images/team/smriti.jpg"),
