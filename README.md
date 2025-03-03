@@ -1,7 +1,6 @@
-
 # Code for Change 2025
 
-Welcome to the Code for Change 2025 website repository. This project promotes the Code for Change 2025 event, presented by OSSDC and NSHM Knowledge Campus, Durgapur.
+Welcome to the official repository for **Code for Change 2025**, a premier hackathon event organized by **OSSDC** in collaboration with **NSHM Knowledge Campus, Durgapur**. This repository contains the source code and resources for the event's official website.
 
 ## Table of Contents
 
@@ -9,6 +8,7 @@ Welcome to the Code for Change 2025 website repository. This project promotes th
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
@@ -16,17 +16,21 @@ Welcome to the Code for Change 2025 website repository. This project promotes th
 
 ## Introduction
 
-Code for Change 2025 is a 24-hour offline hackathon event scheduled from 20 February 2025 to 20 March 2025. This website provides information about the event, including the organizers, code of conduct, and registration details.
+**Code for Change 2025** is a **24-hour offline hackathon** running from **February 20, 2025, to March 20, 2025**. This website serves as an informational hub, providing details about the event, organizers, code of conduct, and registration process.
 
 ## Features
 
-- **Navbar**: A responsive navigation bar with dark mode toggle and menu for smaller screens.
-- **Hero Section**: A visually appealing hero section with animated stars and event details.
-- **Responsive Design**: The website is fully responsive and works well on all screen sizes.
+- **Responsive Design** – Optimized for all screen sizes and devices.
+- **Dark Mode** – Toggle between light and dark themes for a better user experience.
+- **Animated Hero Section** – A visually engaging introduction to the event.
+- **Event Timeline** – Detailed breakdown of event phases and key dates.
+- **Sponsorship Section** – Information about our valued sponsors.
+- **Organizing Team** – Profiles of the event organizers.
+- **Footer** – Contact details and social media links.
 
 ## Installation
 
-To get a local copy up and running, follow these steps:
+To set up the project locally, follow these steps:
 
 1. **Clone the repository**:
    ```sh
@@ -47,56 +51,80 @@ To start the development server, run:
 ```sh
 npm run dev
 ```
-This will start the Vite development server, and you can view the website at [http://localhost:3000](http://localhost:3000).
+This will launch the Vite development server, and you can view the website at **http://localhost:3000**.
 
 ## Project Structure
 
 ```
 code-for-change-2025/
 ├── public/
-│   └── index.html
+│   ├── code_for_change.svg
+│   ├── hackathon.jpg
+│   └── team/
+│       ├── aashish.png
+│       ├── AashishPrasad.jpg
+│       ├── Ankita_Chowdhury.jpg
+│       ├── anusha.jpg
+│       ├── Baishali.jpg
+│       ├── dipankar.jpg
+│       ├── faizan.jpg
+│       ├── PXL_20250209_105633280.jpg
+│       ├── Riya_Bhattacharya.jpg
+│       ├── rony.png
+│       ├── Saathi_Paul.jpg
+│       ├── Sayan_Garai.jpg
+│       └── soumaditya.JPG
 ├── src/
-│   ├── Components/
-│   │   ├── Navbar/
-│   │   │   ├── Navbar.jsx
-│   │   │   └── Navbar.css
-│   │   ├── Hero/
-│   │   │   ├── Hero.jsx
-│   │   │   └── Hero.css
-│   ├── App.jsx
 │   ├── App.css
-│   ├── main.jsx
-│   └── index.css
+│   ├── App.jsx
+│   ├── assets/
+│   │   ├── images/
+│   │   └── music/
+│   ├── Components/
+│   │   ├── Footer/
+│   │   ├── Hero/
+│   │   ├── Navbar/
+│   │   ├── Prizes/
+│   │   ├── Sponsorships/
+│   │   ├── Team/
+│   │   ├── Theme/
+│   │   └── Timer/
+│   ├── index.css
+│   └── main.jsx
 ├── .gitignore
+├── eslint.config.js
+├── index.html
+├── netlify.toml
 ├── package.json
 └── README.md
 ```
 
 ## Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions are highly encouraged! Follow these steps to contribute:
 
-1. **Fork the Project**
-2. **Create your Feature Branch**:
+1. **Fork the repository**.
+2. **Create a feature branch**:
    ```sh
    git checkout -b feature/AmazingFeature
    ```
-3. **Commit your Changes**:
+3. **Commit your changes**:
    ```sh
-   git commit -m 'Add some AmazingFeature'
+   git commit -m "Add AmazingFeature"
    ```
-4. **Push to the Branch**:
+4. **Push to the branch**:
    ```sh
    git push origin feature/AmazingFeature
    ```
-5. **Open a Pull Request**
+5. **Open a Pull Request**.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
+This project is built using:
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
@@ -104,7 +132,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-For any questions, reach out at: 
-- **Email**: [connectcodenest@gmail.com](mailto:connectcodenest@gmail.com)
-- **GitHub Repository**: [Code For Change 2025](https://github.com/CodeNEST-NSHM/Code_For_Change_2025.git)
+For any queries, feel free to reach out:
 
+- **Email**: [codenest@ossdc.in](mailto:codenest@ossdc.in)
+- **GitHub Repository**: [Code For Change 2025](https://github.com/CodeNEST-NSHM/Code_For_Change_2025)
