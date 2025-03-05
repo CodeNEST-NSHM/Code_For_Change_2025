@@ -40,6 +40,8 @@ const Team = () => {
           import("../../assets/images/team/dipankar.jpg"),
           import("../../assets/images/team/amisha.jpg"),
           import("../../assets/images/team/ali.jpg"),
+          import("../../assets/images/team/sumitLaha.jpg"),
+          import("../../assets/images/team/vivek.jpg"),
           import("../../assets/images/team/sumit.jpg"),
           import("../../assets/images/team/vivek.jpg"),
         ];
@@ -72,6 +74,8 @@ const Team = () => {
             { name: "DIPANKAR BAURI", image: importedImages[21].default, social: { linkedin: "https://www.linkedin.com/in/bot-gamer-9a6199322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagram: "https://www.instagram.com/_dipankar_bauri_/" } },
             { name: "AMISHA GUPTA", image: importedImages[22].default, social: { linkedin: "https://www.linkedin.com/in/amisha-gupta-12a028257/", instagram: "https://www.instagram.com/ameesha__31?igsh=bDh2MWE5Z2w0dWk4" } },
             { name: "SHAHE HASAN RAZA KHAN", image: importedImages[23].default, social: { linkedin: "https://www.linkedin.com/in/shahe-hasan-a495622b1/", instagram: "https://www.instagram.com/shahe_hasan/" } },
+            { name: "Sumit Laha", image: importedImages[24].default, social: { linkedin: "https://www.linkedin.com/in/ghoshvivek004", instagram: "https://www.instagram.com/_.viv.ek_/" } },
+            { name: "Vivek Ghosh", image: importedImages[25].default, social: { linkedin: "https://www.linkedin.com/in/sumit-laha-19879621a", instagram: "https://www.instagram.com/sumit.laha.420/" } },
             { name: "SUMIT LAHA", image: importedImages[24].default, social: { linkedin: "https://www.linkedin.com/in/sumit-laha-19879621a ", instagram: "https://www.instagram.com/sumit.laha.420/" } },
             { name: "VIVEK GHOSH", image: importedImages[25].default, social: { linkedin: "https://www.linkedin.com/in/ghoshvivek004 ", instagram: "https://www.instagram.com/_.viv.ek_/" } },
             
