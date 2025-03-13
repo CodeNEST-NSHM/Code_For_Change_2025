@@ -6,7 +6,7 @@ const timelineData = [
   { date: "21 February - 14 March 2025", title: "Registration Phase", description: "Open for all participants" },
   { date: "15 March - 17 March 2025", title: "Hackathon Start", description: "Submit your Project" },
   { date: "18 March - 20 March 2025", title: "Selection Process", description: "Project evaluation" },
-  { date: "21 March 2025", title: "Offline presentation at our campus", description: "Final event days" },
+  { date: "21 March to 22 March 2025", title: "Offline presentation at our campus", description: "Final event days" },
 ];
 
 const TimelineItem = ({ event, index }) => {
