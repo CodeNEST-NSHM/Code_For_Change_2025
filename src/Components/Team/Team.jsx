@@ -46,6 +46,7 @@ const Team = () => {
         import("../../assets/images/team/sumit.jpg"),
         import("../../assets/images/mentors/swastickbose.jpg"),
         import("../../assets/images/mentors/debjitmallick.jpg"),
+        import("../../assets/images/mentors/gouravghosal.jpg"),
       ];
 
       try {
@@ -83,6 +84,7 @@ const Team = () => {
         const mentors = [
           { name: "Swastik Bose", image: importedImages[26].default, social: { linkedin: "https://www.linkedin.com/in/ACoAADWtqtsBY55ERYxLELNLrvZ9IWMafbnDCx8", instagram: "https://www.instagram.com/d.a.r.k.w.i.n.g" } },
           { name: "DEBJIT MALLICK", image: importedImages[27].default, social: { linkedin: "https://www.linkedin.com/in/debajit-mallick", instagram: "https://www.instagram.com/debajit_mallick_13/" } },
+          { name: "Gourav Ghosal", image: importedImages[28].default, social: { linkedin: "https://www.linkedin.com/in/gourav-ghosal", instagram: "https://www.instagram.com/gourav221b" } },
         ];
         setTeamMembers(members);
         setMentors(mentors);
