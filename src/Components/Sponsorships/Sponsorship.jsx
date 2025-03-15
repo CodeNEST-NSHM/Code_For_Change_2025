@@ -5,6 +5,7 @@ import ossdc from '../../assets/images/ossdc.jpeg';
 import devfolio from '../../assets/images/devfolio.webp';
 import EthIndia from '../../assets/images/EthIndia.webp';
 import polygon from '../../assets/images/polygon.jpg';
+import giveMyCertificate from '../../assets/images/givemycertificate.jpg';
 import './Sponsorship.css';
 
 const platinumSponsors = [
@@ -19,6 +20,10 @@ const goldSponsors = [
 const silverSponsors = [
   { name: 'ETHIndia', logo: EthIndia, link: 'https://ethindia.co', alt: 'ETHINDIA LOGO' },
   { name: 'Polygon', logo: polygon, link: 'https://polygon.technology/', alt: 'POLYGON LOGO' },
+];
+
+const cerificateSponsors = [
+  { name: 'Give My Certificate', logo: giveMyCertificate, link: 'https://givemycertificate.com/', alt: 'GiveMyCertificate LOGO' },
 ];
 
 const Sponsorship = () => {
@@ -60,6 +65,15 @@ const Sponsorship = () => {
         <h2 className="category-title">Silver Sponsors</h2>
         <div className="sponsor-grid">
           {silverSponsors.map((sponsor, index) => (
+            <SponsorCard sponsor={sponsor} index={index} key={index} />
+          ))}
+        </div>
+      </div>
+
+      <div className="sponsor-category">
+        <h2 className="category-title">Certificate Sponsors</h2>
+        <div className="sponsor-grid">
+          {cerificateSponsors.map((sponsor, index) => (
             <SponsorCard sponsor={sponsor} index={index} key={index} />
           ))}
         </div>
